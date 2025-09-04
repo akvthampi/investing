@@ -1,278 +1,680 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Stock Market Investing: Complete Guide</title>
-<style>
-  :root{
-    --bg:#0b1220; --card:#121a2b; --text:#e9eef7; --muted:#a9b6cc;
-    --accent:#6bc4ff; --accent2:#8ef0a5; --warn:#ffdf6b; --danger:#ff8a8a;
-    --ok:#8ef0a5;
-  }
-  html,body{margin:0;background:var(--bg);color:var(--text);
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-    line-height:1.65}
-  .container{max-width:1100px;margin:0 auto;padding:2rem 1rem 4rem}
-  header{text-align:center;margin-bottom:1.5rem}
-  h1{font-size:clamp(1.8rem,2.6vw,2.6rem);margin:.3rem 0 .2rem}
-  h2{font-size:clamp(1.3rem,2vw,1.6rem);margin:1.6rem 0 .4rem;color:var(--accent)}
-  h3{font-size:1.05rem;margin:1rem 0 .25rem;color:var(--accent2)}
-  p,li{color:var(--text)}
-  .muted{color:var(--muted)}
-  .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
-    border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1rem;margin:1rem 0}
-  .grid{display:grid;gap:1rem}
-  .grid-2{grid-template-columns:1fr}
-  .grid-3{grid-template-columns:1fr}
-  @media(min-width:900px){
-    .grid-2{grid-template-columns:1fr 1fr}
-    .grid-3{grid-template-columns:repeat(3,1fr)}
-  }
-  .pill{display:inline-block;background:rgba(107,196,255,.12);color:var(--accent);
-    border:1px solid rgba(107,196,255,.35);padding:.2rem .55rem;border-radius:999px;
-    font-size:.85rem;margin:.15rem .35rem .15rem 0}
-  .note{border-left:4px solid var(--warn);background:rgba(255,223,107,.1);
-    padding:.8rem;border-radius:8px;color:#fff7d1}
-  .risk{border-left:4px solid var(--danger);background:rgba(255,138,138,.1);
-    padding:.8rem;border-radius:8px}
-  .ok{border-left:4px solid var(--ok);background:rgba(142,240,165,.1);
-    padding:.8rem;border-radius:8px}
-  figure{margin:0}
-  img{max-width:100%;height:auto;border-radius:10px;border:1px solid rgba(255,255,255,.08)}
-  figcaption{font-size:.9rem;color:var(--muted);margin-top:.25rem}
-  .table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.02);
-    border:1px solid rgba(255,255,255,.12);border-radius:10px;overflow:hidden}
-  .table th,.table td{padding:.7rem .6rem;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top}
-  .table th{text-align:left;background:rgba(255,255,255,.04);color:var(--accent)}
-  .kbd{font-family:ui-monospace,Menlo,Consolas,monospace;background:#0a0f1c;
-    border:1px solid rgba(255,255,255,.12);padding:.05rem .35rem;border-radius:6px;font-size:.9rem}
-  .hero{position:relative;overflow:hidden;border-radius:14px;
-    background:radial-gradient(1000px 500px at 10% -10%,rgba(107,196,255,.12),transparent 60%),
-               radial-gradient(1000px 500px at 90% 120%,rgba(142,240,165,.13),transparent 60%),
-               linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
-    border:1px solid rgba(255,255,255,.1);padding:1.1rem;margin-bottom:1.2rem}
-  .toc a{color:var(--accent);text-decoration:none}
-  .toc a:hover{text-decoration:underline}
-  /* 0.5 inch margins visually on screen */
-  html, body{margin:0.5in;box-sizing:border-box;height:auto}
-  *,*::before,*::after{box-sizing:inherit}
-  @media print{
-    html,body{margin:0}
-    @page{margin:0.5in}
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Investing Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #2c3e50, #4ca1af);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eaeaea;
+        }
+
+        h3 {
+            color: #3498db;
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        .chart-container {
+            height: 300px;
+            margin: 30px 0;
+            border-radius: 10px;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .quote {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .key-term {
+            background: #fff8e1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .key-term h4 {
+            color: #e65100;
+            margin-bottom: 10px;
+        }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .strategy {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .strategy h4 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background-color: #f2f2f2;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .metric {
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .metric h4 {
+            color: #1a73e8;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+            
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            .chart-container {
+                height: 250px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <header class="hero">
-      <h1>Stock Market Investing: A Complete Guide</h1>
-      <p class="muted">Definitions, how markets work, ways to pick stocks, and strategies to manage risk, designed for an approximately 10‑minute read.</p>
-      <div>
-        <span class="pill">Basics</span>
-        <span class="pill">Fundamentals</span>
-        <span class="pill">Valuation</span>
-        <span class="pill">Risk</span>
-        <span class="pill">Strategy</span>
-      </div>
-    </header>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-chart-line"></i> Stock Market Investing Guide</h1>
+            <p class="subtitle">Learn how to build wealth through intelligent stock market investing</p>
+        </header>
 
-    <nav class="card toc">
-      <strong>Contents</strong>
-      <ul>
-        <li><a href="#terms">Key terms: stock, share, market</a></li>
-        <li><a href="#how-market-works">How the stock market works</a></li>
-        <li><a href="#valuation">Valuation metrics</a></li>
-        <li><a href="#selecting-stocks">Strategies to select stocks</a></li>
-        <li><a href="#risk">Risks and how to reduce them</a></li>
-        <li><a href="#building-portfolio">Building and maintaining a portfolio</a></li>
-        <li><a href="#checklist">Beginner checklist</a></li>
-        <li><a href="#glossary">Mini‑glossary</a></li>
-      </ul>
-    </nav>
+        <div class="content">
+            <section id="introduction">
+                <h2>Introduction to Stock Market Investing</h2>
+                <p>Stock market investing is one of the most effective ways to build wealth over time. While it comes with risks, understanding how the market works and employing sound investment strategies can help you achieve your financial goals.</p>
+                
+                <div class="chart-container">
+                    <canvas id="marketGrowthChart"></canvas>
+                </div>
+                
+                <p>This comprehensive guide will walk you through the fundamentals of stock market investing, key terminology, strategies for selecting stocks, risk management techniques, and long-term wealth building approaches.</p>
+            </section>
 
-    <section id="terms">
-      <h2>Key terms: stock, share, market</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>Stock vs. Share</h3>
-          <p>A stock is the overall equity of a company traded in the market; a share is a single unit of ownership of that stock (e.g., owning 100 shares of Company A’s stock). Common stock usually includes voting rights and potential dividends; preferred stock typically has priority dividends but limited voting rights.</p>
-        </div>
-        <div class="card">
-          <h3>The Stock Market</h3>
-          <p>The stock market is a network of exchanges and electronic venues where buyers and sellers trade company shares, facilitating price discovery and capital raising via IPOs and secondary offerings. Markets match orders and report trades to maintain transparency and liquidity.</p>
-        </div>
-      </div>
-      <figure class="card">
-        <img alt="Illustration of stock market order flow" src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=1400&auto=format&fit=crop" />
-        <figcaption>From capital raising to secondary trading, exchanges provide standardized venues for price discovery. Image courtesy of Unsplash.</figcaption>
-      </figure>
-    </section>
+            <section id="basic-concepts">
+                <h2>Basic Concepts: Stocks, Shares, and the Market</h2>
+                
+                <div class="key-term">
+                    <h4>What is a Share?</h4>
+                    <p>A share represents a single unit of ownership in a company. When you own a share, you own a small piece of that company and are entitled to a portion of its assets and earnings.</p>
+                </div>
+                
+                <div class="key-term">
+                    <h4>What is a Stock?</h4>
+                    <p>A stock is a general term used to describe the ownership certificates of any company. When you say you "own stocks," you're saying you own shares in one or more companies.</p>
+                </div>
+                
+                <div class="key-term">
+                    <h4>What is the Stock Market?</h4>
+                    <p>The stock market is a collection of exchanges and markets where regular activities of buying, selling, and issuance of shares of publicly-held companies take place.</p>
+                </div>
+                
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Primary Market</h3>
+                        <p>Where companies issue new securities to the public for the first time through Initial Public Offerings (IPOs).</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Secondary Market</h3>
+                        <p>Where investors trade previously issued securities among themselves. This is what most people refer to as "the stock market."</p>
+                    </div>
+                </div>
+            </section>
 
-    <section id="how-market-works">
-      <h2>How the stock market works</h2>
-      <div class="card">
-        <h3>Primary vs. Secondary Markets</h3>
-        <p>In primary markets, companies sell new shares to investors (e.g., IPOs) to raise capital; in secondary markets, investors trade existing shares with each other, and prices fluctuate based on supply, demand, and expectations.</p>
-      </div>
-      <div class="grid grid-3">
-        <div class="card">
-          <h3>Order Types</h3>
-          <p>Common orders include market orders (execute immediately at current prices) and limit orders (execute at a specified price or better), plus stop/stop‑limit for risk control and trailing stops for dynamic exits.</p>
-        </div>
-        <div class="card">
-          <h3>Indices</h3>
-          <p>Indices like broad or sector benchmarks track groups of stocks to indicate market or segment performance, and are widely used as passive investment targets via index funds and ETFs.</p>
-        </div>
-        <div class="card">
-          <h3>Returns & Taxes</h3>
-          <p>Investor returns come from price appreciation and dividends; total return combines both. Tax treatment varies by jurisdiction and account type; planning often pairs strategy with tax‑efficient vehicles.</p>
-        </div>
-      </div>
-    </section>
+            <section id="how-market-works">
+                <h2>How the Stock Market Works</h2>
+                <p>The stock market operates through a network of exchanges where buyers and sellers meet to trade stocks. Prices are determined by supply and demand - when more people want to buy a stock than sell it, the price goes up, and vice versa.</p>
+                
+                <div class="chart-container">
+                    <canvas id="priceChart"></canvas>
+                </div>
+                
+                <p>Key participants in the stock market include:</p>
+                <ul>
+                    <li><strong>Individual investors</strong> - People like you who buy and sell stocks</li>
+                    <li><strong>Institutional investors</strong> - Large organizations like mutual funds, pension funds, and insurance companies</li>
+                    <li><strong>Market makers</strong> - Firms that provide liquidity by being ready to buy and sell stocks at any time</li>
+                    <li><strong>Brokers</strong> - intermediaries who execute trades on behalf of investors</li>
+                </ul>
+            </section>
 
-    <section id="valuation">
-      <h2>Valuation metrics</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>P/E Ratio</h3>
-          <p>The price‑to‑earnings ratio compares a company’s share price to its earnings per share; it’s used to gauge valuation versus history, peers, and the market, noting growth prospects and cyclicality.</p>
-        </div>
-        <div class="card">
-          <h3>Other Metrics</h3>
-          <p>Additional metrics include price‑to‑book (P/B), price‑to‑sales (P/S), dividend yield and payout ratio, return on equity (ROE), and free cash flow yield for assessing efficiency, quality, and income.</p>
-        </div>
-      </div>
-      <figure class="card">
-        <img alt="Sample P/E distribution style visual" src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1400&auto=format&fit=crop" />
-        <figcaption>Valuation should be interpreted relative to growth, profitability, and balance sheet strength. </figcaption>
-      </figure>
-      <div class="note">Tip: Compare a company’s valuation to its sector and its own history, not just to the overall market.</div>
-    </section>
+            <section id="stock-selection">
+                <h2>Strategies for Selecting Stocks</h2>
+                
+                <div class="strategy-grid">
+                    <div class="strategy">
+                        <h4>Fundamental Analysis</h4>
+                        <p>Examining a company's financial statements, management, competitive advantages, and market position to determine its intrinsic value.</p>
+                    </div>
+                    
+                    <div class="strategy">
+                        <h4>Technical Analysis</h4>
+                        <p>Studying historical price and volume data to identify patterns and trends that might predict future price movements.</p>
+                    </div>
+                    
+                    <div class="strategy">
+                        <h4>Growth Investing</h4>
+                        <p>Focusing on companies that are expected to grow at an above-average rate compared to their industry or the overall market.</p>
+                    </div>
+                    
+                    <div class="strategy">
+                        <h4>Value Investing</h4>
+                        <p>Seeking stocks that appear to be trading for less than their intrinsic value, often identified through fundamental analysis.</p>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <canvas id="analysisChart"></canvas>
+                </div>
+                
+                <h3>Key Metrics for Stock Evaluation</h3>
+                
+                <div class="metric-grid">
+                    <div class="metric">
+                        <h4>P/E Ratio</h4>
+                        <p>Price-to-Earnings ratio compares stock price to earnings per share</p>
+                    </div>
+                    <div class="metric">
+                        <h4>P/B Ratio</h4>
+                        <p>Price-to-Book ratio compares market value to book value</p>
+                    </div>
+                    <div class="metric">
+                        <h4>Dividend Yield</h4>
+                        <p>Annual dividend payment divided by stock price</p>
+                    </div>
+                    <div class="metric">
+                        <h4>ROE</h4>
+                        <p>Return on Equity measures profitability</p>
+                    </div>
+                </div>
+            </section>
 
-    <section id="selecting-stocks">
-      <h2>Strategies to select stocks</h2>
-      <table class="table card">
-        <thead>
-          <tr><th>Approach</th><th>What it focuses on</th><th>When it helps</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Value</strong></td>
-            <td>Buying below estimated intrinsic value using metrics like P/E, P/B, FCF yield.</td>
-            <td>Mean‑reversion markets; when pessimism overshoots fundamentals.</td>
-          </tr>
-          <tr>
-            <td><strong>Growth</strong></td>
-            <td>Revenue/EPS growth, TAM, margins, reinvestment runway, competitive moats.</td>
-            <td>Structural innovation cycles and secular trends.</td>
-          </tr>
-          <tr>
-            <td><strong>Dividend/Income</strong></td>
-            <td>Dividend yield, payout safety, growth consistency, cash flow coverage.</td>
-            <td>Income needs and lower‑volatility objectives.</td>
-          </tr>
-          <tr>
-            <td><strong>Indexing</strong></td>
-            <td>Low‑cost broad diversification via index funds/ETFs to match the market.</td>
-            <td>Long‑term compounding with minimal selection risk.</td>
-          </tr>
-          <tr>
-            <td><strong>Factor Blends</strong></td>
-            <td>Rules‑based tilts like quality, value, momentum, low‑volatility.</td>
-            <td>Systematic diversification across drivers of returns.</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>Fundamental Analysis</h3>
-          <p>Study financial statements, unit economics, industry structure, and management quality to estimate intrinsic value and risk‑adjusted return potential over a multi‑year horizon.</p>
-        </div>
-        <div class="card">
-          <h3>Technical & Sentiment</h3>
-          <p>Use price/volume trends, moving averages, support/resistance, and market breadth to inform timing and risk, complementing—but not replacing—fundamentals.</p>
-        </div>
-      </div>
-      <figure class="card">
-        <img alt="Simple price trend chart aesthetic" src="https://images.unsplash.com/photo-1518186233392-c232efbf2373?q=80&w=1400&auto=format&fit=crop" />
-        <figcaption>Combine fundamental conviction with rules for entries, position sizing, and exits to improve outcomes.</figcaption>
-      </figure>
-    </section>
+            <section id="risk-management">
+                <h2>Risk Management Strategies</h2>
+                <p>All investments carry some degree of risk. Successful investors don't avoid risk—they manage it effectively.</p>
+                
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Diversification</h3>
+                        <p>Spreading investments across various sectors, industries, and geographic regions to reduce exposure to any single asset or risk.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Asset Allocation</h3>
+                        <p>Dividing your investment portfolio among different asset categories, such as stocks, bonds, and cash.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Dollar-Cost Averaging</h3>
+                        <p>Investing a fixed amount of money at regular intervals, regardless of market conditions.</p>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <canvas id="diversificationChart"></canvas>
+                </div>
+                
+                <h3>Setting Stop-Loss Orders</h3>
+                <p>A stop-loss order is designed to limit an investor's loss on a security position. It sets a specific price at which the stock will be automatically sold if the price drops to that level.</p>
+            </section>
 
-    <section id="risk">
-      <h2>Risks and how to reduce them</h2>
-      <div class="risk card">
-        <h3>Major Risk Types</h3>
-        <ul>
-          <li>Systematic (market) risk from macro shocks, rates, and geopolitics affects most stocks simultaneously.</li>
-          <li>Unsystematic (company/industry) risk stems from idiosyncratic events like competition, execution, or governance.</li>
-          <li>Liquidity and operational risks include wide spreads, thin volume, platform outages, and cyber issues.</li>
-        </ul>
-      </div>
-      <div class="ok card">
-        <h3>Risk Reduction Toolkit</h3>
-        <ul>
-          <li>Diversification across sectors, styles, and regions lowers single‑name and sector concentration risk.</li>
-          <li>Asset allocation blends stocks with bonds/cash/alternatives; periodic rebalancing maintains target risk.</li>
-          <li>Position sizing and the 1–2% per‑position risk rule help cap drawdowns; stops/alerts enforce discipline.</li>
-          <li>Dollar‑cost averaging (DCA) smooths entry timing risk by investing fixed amounts on a schedule.</li>
-          <li>Due diligence on financials, valuation, and quality reduces avoidable idiosyncratic risks.</li>
-        </ul>
-      </div>
-    </section>
+            <section id="investment-approaches">
+                <h2>Long-Term vs Short-Term Investing</h2>
+                
+                <div class="chart-container">
+                    <canvas id="longVsShortChart"></canvas>
+                </div>
+                
+                <table class="comparison-table">
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Long-Term Investing</th>
+                        <th>Short-Term Trading</th>
+                    </tr>
+                    <tr>
+                        <td>Time Horizon</td>
+                        <td>Years to decades</td>
+                        <td>Days to months</td>
+                    </tr>
+                    <tr>
+                        <td>Primary Strategy</td>
+                        <td>Buy and hold</td>
+                        <td>Buy low, sell high frequently</td>
+                    </tr>
+                    <tr>
+                        <td>Risk Level</td>
+                        <td>Moderate</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Time Requirement</td>
+                        <td>Low</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Tax Implications</td>
+                        <td>Favorable long-term capital gains</td>
+                        <td>Short-term gains taxed as ordinary income</td>
+                    </tr>
+                </table>
+                
+                <h3>Long-Term Investing</h3>
+                <p>Long-term investing involves buying and holding securities for an extended period, typically years or decades. This approach benefits from compound growth and weathers short-term market volatility.</p>
+                
+                <h3>Short-Term Trading</h3>
+                <p>Short-term trading involves buying and selling securities within a short time frame, from minutes to months. This approach requires more active management and carries higher transaction costs and risks.</p>
+                
+                <div class="quote">
+                    <p>"The stock market is a device for transferring money from the impatient to the patient." - Warren Buffett</p>
+                </div>
+            </section>
 
-    <section id="building-portfolio">
-      <h2>Building and maintaining a portfolio</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>Starting Steps</h3>
-          <p>Define goals and horizon, pick a broker, choose a core approach (indexing or a diversified core) and add active tilts only with clear rationale and risk limits.</p>
-        </div>
-        <div class="card">
-          <h3>Ongoing Process</h3>
-          <p>Schedule reviews to rebalance, evaluate thesis changes, and update risk controls; keep costs and taxes in view to protect net returns over time.</p>
-        </div>
-      </div>
-      <figure class="card">
-        <img alt="Asset allocation visual" src="https://images.unsplash.com/photo-1485217988980-11786ced9454?q=80&w=1400&auto=format&fit=crop" />
-        <figcaption>Asset allocation and periodic rebalancing are key drivers of long‑run portfolio behavior.</figcaption>
-      </figure>
-    </section>
+            <section id="common-mistakes">
+                <h2>Common Investing Mistakes to Avoid</h2>
+                
+                <div class="chart-container">
+                    <canvas id="mistakesChart"></canvas>
+                </div>
+                
+                <ul>
+                    <li><strong>Emotional investing</strong> - Making decisions based on fear or greed rather than analysis</li>
+                    <li><strong>Chasing performance</strong> - Buying stocks that have already had significant price increases</li>
+                    <li><strong>Market timing</strong> - Trying to predict the best times to buy and sell</li>
+                    <li><strong>Overconcentration</strong> - Putting too much money into a single investment</li>
+                    <li><strong>Ignoring fees</strong> - Underestimating the impact of transaction costs and expenses</li>
+                </ul>
+            </section>
 
-    <section id="checklist">
-      <h2>Beginner checklist</h2>
-      <div class="card">
-        <ul>
-          <li>Write down objective, horizon, and risk tolerance; choose an approach (index core plus optional tilts).</li>
-          <li>Automate contributions (DCA), diversify broadly, and cap single‑name weights.</li>
-          <li>Use limits for entries, define exits, and set max loss per position/portfolio.</li>
-          <li>Review/rebalance at a fixed cadence; avoid strategy drift from short‑term noise.</li>
-        </ul>
-      </div>
-    </section>
+            <section id="getting-started">
+                <h2>Getting Started with Stock Market Investing</h2>
+                
+                <div class="chart-container">
+                    <canvas id="startingChart"></canvas>
+                </div>
+                
+                <ol>
+                    <li><strong>Set clear financial goals</strong> - Determine what you want to achieve and your time horizon</li>
+                    <li><strong>Assess your risk tolerance</strong> - Understand how much volatility you can comfortably withstand</li>
+                    <li><strong>Educate yourself</strong> - Learn about different investment approaches and strategies</li>
+                    <li><strong>Open a brokerage account</strong> - Choose a reputable broker that meets your needs</li>
+                    <li><strong>Start with a diversified portfolio</strong> - Consider low-cost index funds or ETFs if you're beginning</li>
+                    <li><strong>Invest regularly</strong> - Make investing a consistent habit</li>
+                    <li><strong>Monitor and rebalance</strong> - Periodically review your portfolio and make adjustments as needed</li>
+                </ol>
+            </section>
+        </div>
 
-    <section id="glossary">
-      <h2>Mini‑glossary</h2>
-      <div class="grid grid-3">
-        <div class="card">
-          <h3>Market Cap</h3>
-          <p>Share price × shares outstanding; rough measure of company size and market value.</p>
-        </div>
-        <div class="card">
-          <h3>Dividend Yield</h3>
-          <p>Annual dividend ÷ share price; income rate that must be weighed against payout safety and growth.</p>
-        </div>
-        <div class="card">
-          <h3>Volatility</h3>
-          <p>Degree of price fluctuation; affects drawdowns and required risk controls in portfolio design.</p>
-        </div>
-      </div>
-    </section>
+        <footer>
+            <p>Stock Market Investing Guide | © 2023 Financial Wisdom Hub</p>
+            <p>Remember: All investments involve risk, and past performance is not indicative of future results.</p>
+        </footer>
+    </div>
 
-    <footer class="muted" style="margin-top:2rem">
-      <p>Educational content only—no investment advice. Consider personal circumstances and local regulations before investing.</p>
-    </footer>
-  </div>
+    <script>
+        // Market Growth Chart
+        const marketGrowthCtx = document.getElementById('marketGrowthChart').getContext('2d');
+        new Chart(marketGrowthCtx, {
+            type: 'line',
+            data: {
+                labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+                datasets: [{
+                    label: 'S&P 500 Index',
+                    data: [1600, 1880, 2040, 2240, 2680, 2500, 3230, 3750, 4770, 3840, 4550],
+                    borderColor: '#3498db',
+                    backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Historical S&P 500 Performance (2013-2023)'
+                    },
+                    subtitle: {
+                        display: true,
+                        text: 'Long-term market growth despite periodic corrections'
+                    }
+                }
+            }
+        });
+
+        // Price chart
+        const priceCtx = document.getElementById('priceChart').getContext('2d');
+        new Chart(priceCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Stock Price',
+                    data: [105, 110, 115, 113, 120, 118, 125, 130, 128, 135, 140, 145],
+                    borderColor: '#3498db',
+                    backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Example Stock Price Movement Over One Year'
+                    }
+                }
+            }
+        });
+
+        // Analysis Chart
+        const analysisCtx = document.getElementById('analysisChart').getContext('2d');
+        new Chart(analysisCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Tech Company A', 'Tech Company B', 'Tech Company C', 'Tech Company D'],
+                datasets: [
+                    {
+                        label: 'P/E Ratio',
+                        data: [25, 18, 32, 22],
+                        backgroundColor: 'rgba(52, 152, 219, 0.7)',
+                    },
+                    {
+                        label: 'ROE (%)',
+                        data: [18, 22, 15, 20],
+                        backgroundColor: 'rgba(46, 204, 113, 0.7)',
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Comparative Company Analysis Metrics'
+                    }
+                }
+            }
+        });
+
+        // Diversification chart
+        const diversifyCtx = document.getElementById('diversificationChart').getContext('2d');
+        new Chart(diversifyCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Technology', 'Healthcare', 'Financials', 'Consumer Goods', 'Energy', 'Other'],
+                datasets: [{
+                    data: [30, 20, 15, 15, 10, 10],
+                    backgroundColor: [
+                        '#3498db',
+                        '#2ecc71',
+                        '#e74c3c',
+                        '#f39c12',
+                        '#9b59b6',
+                        '#95a5a6'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Example of a Well-Diversified Portfolio'
+                    }
+                }
+            }
+        });
+
+        // Long vs Short Term Chart
+        const longVsShortCtx = document.getElementById('longVsShortChart').getContext('2d');
+        new Chart(longVsShortCtx, {
+            type: 'line',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5', 'Year 6', 'Year 7', 'Year 8', 'Year 9', 'Year 10'],
+                datasets: [{
+                    label: 'Long-Term Buy & Hold',
+                    data: [10000, 11200, 12500, 14000, 15700, 17500, 19600, 22000, 24600, 27500],
+                    borderColor: '#2ecc71',
+                    backgroundColor: 'rgba(46, 204, 113, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                },
+                {
+                    label: 'Short-Term Trading',
+                    data: [10000, 10500, 9800, 11200, 10800, 10200, 11500, 11000, 10700, 12000],
+                    borderColor: '#e74c3c',
+                    backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Long-Term vs Short-Term Investment Performance'
+                    }
+                }
+            }
+        });
+
+        // Mistakes Chart
+        const mistakesCtx = document.getElementById('mistakesChart').getContext('2d');
+        new Chart(mistakesCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Emotional Decisions', 'Chasing Performance', 'Market Timing', 'Overconcentration', 'Ignoring Fees', 'Other'],
+                datasets: [{
+                    data: [35, 25, 15, 12, 8, 5],
+                    backgroundColor: [
+                        '#e74c3c',
+                        '#f39c12',
+                        '#9b59b6',
+                        '#34495e',
+                        '#95a5a6',
+                        '#3498db'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Common Investor Mistakes by Prevalence'
+                    }
+                }
+            }
+        });
+
+        // Starting Chart
+        const startingCtx = document.getElementById('startingChart').getContext('2d');
+        new Chart(startingCtx, {
+            type: 'bar',
+            data: {
+                labels: ['<$100', '$100-500', '$500-1000', '$1000-5000', '$5000+'],
+                datasets: [{
+                    label: 'Number of Investors',
+                    data: [42, 28, 15, 10, 5],
+                    backgroundColor: [
+                        'rgba(52, 152, 219, 0.7)',
+                        'rgba(46, 204, 113, 0.7)',
+                        'rgba(155, 89, 182, 0.7)',
+                        'rgba(241, 196, 15, 0.7)',
+                        'rgba(230, 126, 34, 0.7)'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Initial Investment Amounts for Beginners'
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
