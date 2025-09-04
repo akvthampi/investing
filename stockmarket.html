@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stock Market Investing: Complete Guide</title>
+<style>
+  :root{
+    --bg:#0b1220; --card:#121a2b; --text:#e9eef7; --muted:#a9b6cc;
+    --accent:#6bc4ff; --accent2:#8ef0a5; --warn:#ffdf6b; --danger:#ff8a8a;
+    --ok:#8ef0a5;
+  }
+  html,body{margin:0;background:var(--bg);color:var(--text);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+    line-height:1.65}
+  .container{max-width:1100px;margin:0 auto;padding:2rem 1rem 4rem}
+  header{text-align:center;margin-bottom:1.5rem}
+  h1{font-size:clamp(1.8rem,2.6vw,2.6rem);margin:.3rem 0 .2rem}
+  h2{font-size:clamp(1.3rem,2vw,1.6rem);margin:1.6rem 0 .4rem;color:var(--accent)}
+  h3{font-size:1.05rem;margin:1rem 0 .25rem;color:var(--accent2)}
+  p,li{color:var(--text)}
+  .muted{color:var(--muted)}
+  .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+    border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1rem;margin:1rem 0}
+  .grid{display:grid;gap:1rem}
+  .grid-2{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr}
+  @media(min-width:900px){
+    .grid-2{grid-template-columns:1fr 1fr}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+  }
+  .pill{display:inline-block;background:rgba(107,196,255,.12);color:var(--accent);
+    border:1px solid rgba(107,196,255,.35);padding:.2rem .55rem;border-radius:999px;
+    font-size:.85rem;margin:.15rem .35rem .15rem 0}
+  .note{border-left:4px solid var(--warn);background:rgba(255,223,107,.1);
+    padding:.8rem;border-radius:8px;color:#fff7d1}
+  .risk{border-left:4px solid var(--danger);background:rgba(255,138,138,.1);
+    padding:.8rem;border-radius:8px}
+  .ok{border-left:4px solid var(--ok);background:rgba(142,240,165,.1);
+    padding:.8rem;border-radius:8px}
+  figure{margin:0}
+  img{max-width:100%;height:auto;border-radius:10px;border:1px solid rgba(255,255,255,.08)}
+  figcaption{font-size:.9rem;color:var(--muted);margin-top:.25rem}
+  .table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.02);
+    border:1px solid rgba(255,255,255,.12);border-radius:10px;overflow:hidden}
+  .table th,.table td{padding:.7rem .6rem;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top}
+  .table th{text-align:left;background:rgba(255,255,255,.04);color:var(--accent)}
+  .kbd{font-family:ui-monospace,Menlo,Consolas,monospace;background:#0a0f1c;
+    border:1px solid rgba(255,255,255,.12);padding:.05rem .35rem;border-radius:6px;font-size:.9rem}
+  .hero{position:relative;overflow:hidden;border-radius:14px;
+    background:radial-gradient(1000px 500px at 10% -10%,rgba(107,196,255,.12),transparent 60%),
+               radial-gradient(1000px 500px at 90% 120%,rgba(142,240,165,.13),transparent 60%),
+               linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+    border:1px solid rgba(255,255,255,.1);padding:1.1rem;margin-bottom:1.2rem}
+  .toc a{color:var(--accent);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  /* 0.5 inch margins visually on screen */
+  html, body{margin:0.5in;box-sizing:border-box;height:auto}
+  *,*::before,*::after{box-sizing:inherit}
+  @media print{
+    html,body{margin:0}
+    @page{margin:0.5in}
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>Stock Market Investing: A Complete Guide</h1>
+      <p class="muted">Definitions, how markets work, ways to pick stocks, and strategies to manage risk, designed for an approximately 10‑minute read.</p>
+      <div>
+        <span class="pill">Basics</span>
+        <span class="pill">Fundamentals</span>
+        <span class="pill">Valuation</span>
+        <span class="pill">Risk</span>
+        <span class="pill">Strategy</span>
+      </div>
+    </header>
+
+    <nav class="card toc">
+      <strong>Contents</strong>
+      <ul>
+        <li><a href="#terms">Key terms: stock, share, market</a></li>
+        <li><a href="#how-market-works">How the stock market works</a></li>
+        <li><a href="#valuation">Valuation metrics</a></li>
+        <li><a href="#selecting-stocks">Strategies to select stocks</a></li>
+        <li><a href="#risk">Risks and how to reduce them</a></li>
+        <li><a href="#building-portfolio">Building and maintaining a portfolio</a></li>
+        <li><a href="#checklist">Beginner checklist</a></li>
+        <li><a href="#glossary">Mini‑glossary</a></li>
+      </ul>
+    </nav>
+
+    <section id="terms">
+      <h2>Key terms: stock, share, market</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Stock vs. Share</h3>
+          <p>A stock is the overall equity of a company traded in the market; a share is a single unit of ownership of that stock (e.g., owning 100 shares of Company A’s stock). Common stock usually includes voting rights and potential dividends; preferred stock typically has priority dividends but limited voting rights.</p>
+        </div>
+        <div class="card">
+          <h3>The Stock Market</h3>
+          <p>The stock market is a network of exchanges and electronic venues where buyers and sellers trade company shares, facilitating price discovery and capital raising via IPOs and secondary offerings. Markets match orders and report trades to maintain transparency and liquidity.</p>
+        </div>
+      </div>
+      <figure class="card">
+        <img alt="Illustration of stock market order flow" src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=1400&auto=format&fit=crop" />
+        <figcaption>From capital raising to secondary trading, exchanges provide standardized venues for price discovery. Image courtesy of Unsplash.</figcaption>
+      </figure>
+    </section>
+
+    <section id="how-market-works">
+      <h2>How the stock market works</h2>
+      <div class="card">
+        <h3>Primary vs. Secondary Markets</h3>
+        <p>In primary markets, companies sell new shares to investors (e.g., IPOs) to raise capital; in secondary markets, investors trade existing shares with each other, and prices fluctuate based on supply, demand, and expectations.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Order Types</h3>
+          <p>Common orders include market orders (execute immediately at current prices) and limit orders (execute at a specified price or better), plus stop/stop‑limit for risk control and trailing stops for dynamic exits.</p>
+        </div>
+        <div class="card">
+          <h3>Indices</h3>
+          <p>Indices like broad or sector benchmarks track groups of stocks to indicate market or segment performance, and are widely used as passive investment targets via index funds and ETFs.</p>
+        </div>
+        <div class="card">
+          <h3>Returns & Taxes</h3>
+          <p>Investor returns come from price appreciation and dividends; total return combines both. Tax treatment varies by jurisdiction and account type; planning often pairs strategy with tax‑efficient vehicles.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="valuation">
+      <h2>Valuation metrics</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>P/E Ratio</h3>
+          <p>The price‑to‑earnings ratio compares a company’s share price to its earnings per share; it’s used to gauge valuation versus history, peers, and the market, noting growth prospects and cyclicality.</p>
+        </div>
+        <div class="card">
+          <h3>Other Metrics</h3>
+          <p>Additional metrics include price‑to‑book (P/B), price‑to‑sales (P/S), dividend yield and payout ratio, return on equity (ROE), and free cash flow yield for assessing efficiency, quality, and income.</p>
+        </div>
+      </div>
+      <figure class="card">
+        <img alt="Sample P/E distribution style visual" src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1400&auto=format&fit=crop" />
+        <figcaption>Valuation should be interpreted relative to growth, profitability, and balance sheet strength. </figcaption>
+      </figure>
+      <div class="note">Tip: Compare a company’s valuation to its sector and its own history, not just to the overall market.</div>
+    </section>
+
+    <section id="selecting-stocks">
+      <h2>Strategies to select stocks</h2>
+      <table class="table card">
+        <thead>
+          <tr><th>Approach</th><th>What it focuses on</th><th>When it helps</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Value</strong></td>
+            <td>Buying below estimated intrinsic value using metrics like P/E, P/B, FCF yield.</td>
+            <td>Mean‑reversion markets; when pessimism overshoots fundamentals.</td>
+          </tr>
+          <tr>
+            <td><strong>Growth</strong></td>
+            <td>Revenue/EPS growth, TAM, margins, reinvestment runway, competitive moats.</td>
+            <td>Structural innovation cycles and secular trends.</td>
+          </tr>
+          <tr>
+            <td><strong>Dividend/Income</strong></td>
+            <td>Dividend yield, payout safety, growth consistency, cash flow coverage.</td>
+            <td>Income needs and lower‑volatility objectives.</td>
+          </tr>
+          <tr>
+            <td><strong>Indexing</strong></td>
+            <td>Low‑cost broad diversification via index funds/ETFs to match the market.</td>
+            <td>Long‑term compounding with minimal selection risk.</td>
+          </tr>
+          <tr>
+            <td><strong>Factor Blends</strong></td>
+            <td>Rules‑based tilts like quality, value, momentum, low‑volatility.</td>
+            <td>Systematic diversification across drivers of returns.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Fundamental Analysis</h3>
+          <p>Study financial statements, unit economics, industry structure, and management quality to estimate intrinsic value and risk‑adjusted return potential over a multi‑year horizon.</p>
+        </div>
+        <div class="card">
+          <h3>Technical & Sentiment</h3>
+          <p>Use price/volume trends, moving averages, support/resistance, and market breadth to inform timing and risk, complementing—but not replacing—fundamentals.</p>
+        </div>
+      </div>
+      <figure class="card">
+        <img alt="Simple price trend chart aesthetic" src="https://images.unsplash.com/photo-1518186233392-c232efbf2373?q=80&w=1400&auto=format&fit=crop" />
+        <figcaption>Combine fundamental conviction with rules for entries, position sizing, and exits to improve outcomes.</figcaption>
+      </figure>
+    </section>
+
+    <section id="risk">
+      <h2>Risks and how to reduce them</h2>
+      <div class="risk card">
+        <h3>Major Risk Types</h3>
+        <ul>
+          <li>Systematic (market) risk from macro shocks, rates, and geopolitics affects most stocks simultaneously.</li>
+          <li>Unsystematic (company/industry) risk stems from idiosyncratic events like competition, execution, or governance.</li>
+          <li>Liquidity and operational risks include wide spreads, thin volume, platform outages, and cyber issues.</li>
+        </ul>
+      </div>
+      <div class="ok card">
+        <h3>Risk Reduction Toolkit</h3>
+        <ul>
+          <li>Diversification across sectors, styles, and regions lowers single‑name and sector concentration risk.</li>
+          <li>Asset allocation blends stocks with bonds/cash/alternatives; periodic rebalancing maintains target risk.</li>
+          <li>Position sizing and the 1–2% per‑position risk rule help cap drawdowns; stops/alerts enforce discipline.</li>
+          <li>Dollar‑cost averaging (DCA) smooths entry timing risk by investing fixed amounts on a schedule.</li>
+          <li>Due diligence on financials, valuation, and quality reduces avoidable idiosyncratic risks.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="building-portfolio">
+      <h2>Building and maintaining a portfolio</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Starting Steps</h3>
+          <p>Define goals and horizon, pick a broker, choose a core approach (indexing or a diversified core) and add active tilts only with clear rationale and risk limits.</p>
+        </div>
+        <div class="card">
+          <h3>Ongoing Process</h3>
+          <p>Schedule reviews to rebalance, evaluate thesis changes, and update risk controls; keep costs and taxes in view to protect net returns over time.</p>
+        </div>
+      </div>
+      <figure class="card">
+        <img alt="Asset allocation visual" src="https://images.unsplash.com/photo-1485217988980-11786ced9454?q=80&w=1400&auto=format&fit=crop" />
+        <figcaption>Asset allocation and periodic rebalancing are key drivers of long‑run portfolio behavior.</figcaption>
+      </figure>
+    </section>
+
+    <section id="checklist">
+      <h2>Beginner checklist</h2>
+      <div class="card">
+        <ul>
+          <li>Write down objective, horizon, and risk tolerance; choose an approach (index core plus optional tilts).</li>
+          <li>Automate contributions (DCA), diversify broadly, and cap single‑name weights.</li>
+          <li>Use limits for entries, define exits, and set max loss per position/portfolio.</li>
+          <li>Review/rebalance at a fixed cadence; avoid strategy drift from short‑term noise.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="glossary">
+      <h2>Mini‑glossary</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Market Cap</h3>
+          <p>Share price × shares outstanding; rough measure of company size and market value.</p>
+        </div>
+        <div class="card">
+          <h3>Dividend Yield</h3>
+          <p>Annual dividend ÷ share price; income rate that must be weighed against payout safety and growth.</p>
+        </div>
+        <div class="card">
+          <h3>Volatility</h3>
+          <p>Degree of price fluctuation; affects drawdowns and required risk controls in portfolio design.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="muted" style="margin-top:2rem">
+      <p>Educational content only—no investment advice. Consider personal circumstances and local regulations before investing.</p>
+    </footer>
+  </div>
+</body>
+</html>

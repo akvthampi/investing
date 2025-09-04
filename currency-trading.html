@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currency Trading (Forex) - The Global Market of Money</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9ff;
+      color: #333;
+      line-height: 1.7;
+      margin: 0 1in; /* 1-inch margin on left and right */
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 0;
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      color: white;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .content {
+      padding: 30px;
+      font-size: 1.1em;
+    }
+
+    h2 {
+      color: #4a5568;
+      margin: 25px 0 15px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 5px;
+      font-size: 1.8em;
+    }
+
+    h3 {
+      color: #718096;
+      margin: 20px 0 10px;
+      font-size: 1.4em;
+    }
+
+    ul, ol {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      background-color: #fff8e1;
+      padding: 10px;
+      border-left: 4px solid #ff9800;
+      margin: 20px 0;
+      font-style: italic;
+    }
+
+    .calculator {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 30px 0;
+      border: 1px solid #e2e8f0;
+    }
+
+    .calculator label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: 600;
+      color: #4a5568;
+    }
+
+    .calculator input, .calculator select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    .calculator button {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .calculator button:hover {
+      background-color: #c0392b;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #e8f5e8;
+      border-left: 4px solid #4caf50;
+      font-weight: bold;
+      color: #2e7d32;
+      border-radius: 5px;
+    }
+
+    .tip-box {
+      background-color: #e3f2fd;
+      padding: 15px;
+      border-left: 4px solid #2196f3;
+      margin: 25px 0;
+      border-radius: 5px;
+      font-size: 1.05em;
+    }
+
+    .tip-box h3 {
+      margin-top: 0;
+      color: #1976d2;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95em;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f1f3f5;
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background-color: #f8f9fa;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      padding: 20px;
+      color: #6b7280;
+      font-size: 0.9em;
+      border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      .container {
+        margin: 10px;
+      }
+      .content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-exchange-alt"></i> Currency Trading (Forex)</h1>
+      <p>The world’s largest financial market — trade currencies with precision and strategy.</p>
+    </header>
+
+    <div class="content">
+      <p><strong>Currency trading</strong>, also known as <strong>Forex (Foreign Exchange)</strong>, is the global market where currencies are bought and sold. It's the largest and most liquid financial market in the world, with daily trading volume exceeding $7 trillion.</p>
+
+      <h2>What is Currency Trading?</h2>
+      <p>Currency trading involves buying one currency while selling another, aiming to profit from fluctuations in exchange rates. For example, if you believe the US Dollar will strengthen against the Euro, you buy USD/EUR and sell it later at a higher rate.</p>
+
+      <h2>Why Trade Currencies?</h2>
+      <p>Traders engage in forex for several reasons:</p>
+      <ul>
+        <li><strong>High Liquidity:</strong> Easy to enter and exit positions</li>
+        <li><strong>24/5 Market:</strong> Trades anytime, from Sunday night to Friday evening</li>
+        <li><strong>Low Transaction Costs:</strong> No commission, only spread</li>
+        <li><strong>Leverage:</strong> Control large positions with small capital</li>
+        <li><strong>Hedging:</strong> Protect against currency risk for businesses</li>
+        <li><strong>Diversification:</strong> Add volatility to investment portfolio</li>
+      </ul>
+
+      <h2>How Does Forex Work?</h2>
+      <p>Forex operates through a network of banks, brokers, and institutions. Prices are determined by supply and demand, influenced by economic data, interest rates, geopolitical events, and market sentiment.</p>
+      <p>Each currency pair has two components:</p>
+      <ul>
+        <li><strong>Base Currency:</strong> First currency in the pair (e.g., USD in USD/EUR)</li>
+        <li><strong>Quote Currency:</strong> Second currency (e.g., EUR in USD/EUR)</li>
+      </ul>
+      <p>Example: If USD/EUR = 0.90, it means 1 USD = 0.90 EUR.</p>
+
+      <h2>Major Currency Pairs & Their Significance</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Pair</th>
+              <th>Components</th>
+              <th>Significance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>EUR/USD</strong></td>
+              <td>Euro / US Dollar</td>
+              <td>Most traded pair; reflects EU-US economic health</td>
+            </tr>
+            <tr>
+              <td><strong>USD/JPY</strong></td>
+              <td>US Dollar / Japanese Yen</td>
+              <td>Safe-haven pair; sensitive to risk appetite</td>
+            </tr>
+            <tr>
+              <td><strong>GBP/USD</strong></td>
+              <td>British Pound / US Dollar</td>
+              <td>UK-US relations; Brexit impact</td>
+            </tr>
+            <tr>
+              <td><strong>AUD/USD</strong></td>
+              <td>Australian Dollar / US Dollar</td>
+              <td>Commodity-linked; oil, mining</td>
+            </tr>
+            <tr>
+              <td><strong>USD/CAD</strong></td>
+              <td>US Dollar / Canadian Dollar</td>
+              <td>Oil prices; energy exports</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Market Hours & Liquidity</h2>
+      <p>Forex is open 24 hours a day, 5 days a week:</p>
+      <ul>
+        <li><strong>Sydney Session:</strong> 22:00–06:00 GMT</li>
+        <li><strong>Tokyo Session:</strong> 00:00–08:00 GMT</li>
+        <li><strong>London Session:</strong> 08:00–17:00 GMT</li>
+        <li><strong>New York Session:</strong> 13:00–22:00 GMT</li>
+      </ul>
+      <p>💡 Highest liquidity occurs when London and New York overlap (13:00–17:00 GMT).</p>
+
+      <h2>Trading Mechanisms</h2>
+      <ul>
+        <li><strong>Spot Trading:</strong> Immediate settlement (2 business days)</li>
+        <li><strong>Forward Contracts:</strong> Agreed price for future delivery</li>
+        <li><strong>Swaps:</strong> Exchange of interest payments between parties</li>
+        <li><strong>Futures:</strong> Standardized contracts traded on exchanges</li>
+      </ul>
+
+      <h2>Leverage & Margin</h2>
+      <p><strong>Leverage</strong> allows traders to control large positions with small capital. For example, 1:100 leverage means $1,000 can control $100,000 worth of currency.</p>
+      <p><strong>Margin</strong> is the deposit required to open a leveraged position. High leverage increases both gains and losses.</p>
+      <p>⚠️ Example: A 1% move in EUR/USD can result in a 100% gain or loss with 100x leverage.</p>
+
+      <h2>Risks in Currency Trading</h2>
+      <div class="tip-box">
+        <h3>1. Market Volatility</h3>
+        <p>Exchange rates can swing rapidly due to news, elections, or crises.</p>
+      </div>
+
+      <div class="tip-box">
+        <h3>2. Leverage Risk</h3>
+        <p>High leverage can wipe out your account quickly.</p>
+      </div>
+
+      <div class="tip-box">
+        <h3>3. Interest Rate Changes</h3>
+        <p>Central bank decisions (e.g., Fed, ECB) directly affect currency values.</p>
+      </div>
+
+      <div class="tip-box">
+        <h3>4. Geopolitical Events</h3>
+        <p>Wars, sanctions, or political instability can trigger sharp moves.</p>
+      </div>
+
+      <div class="tip-box">
+        <h3>5. Slippage & Execution Risk</h3>
+        <p>Orders may not execute at desired prices during high volatility.</p>
+      </div>
+
+      <h2>Strategies for Risk Mitigation</h2>
+      <div class="tip-box">
+        <h3>1. Use Stop-Loss Orders</h3>
+        <p>Automatically close losing trades to limit losses.</p>
+      </div>
+
+      <div class="tip-box">
+        <h3>2. Never Risk More Than 1–2% Per Trade</h3>
+        <p>Protect your capital with disciplined position sizing.</p>
+      </div>
+
+      <div class="tip-box">
+        <h3>3. Diversify Across Pairs</h3>
+        <p>Don’t concentrate on one currency pair.</p>
+      </div>
+
+      <div class="tip-box">
+        <h3>4. Avoid Overleveraging</h3>
+        <p>Use 10–20x leverage for beginners; avoid 100x+.</p>
+      </div>
+
+      <div class="tip-box">
+        <h3>5. Trade During High Liquidity</h3>
+        <p>Focus on London-New York overlap for tighter spreads.</p>
+      </div>
+
+      <h2>Technical Analysis</h2>
+      <p>Uses charts and indicators to predict price movements:</p>
+      <ul>
+        <li><strong>Support & Resistance:</strong> Price levels where reversal likely</li>
+        <li><strong>Trendlines:</strong> Identify direction (bullish/bearish)</li>
+        <li><strong>Indicators:</strong> RSI, MACD, Moving Averages</li>
+        <li><strong>Candlestick Patterns:</strong> Doji, Hammer, Engulfing</li>
+      </ul>
+
+      <h2>Fundamental Analysis</h2>
+      <p>Studies economic data to assess currency strength:</p>
+      <ul>
+        <li><strong>Interest Rates:</strong> Higher rates attract investors</li>
+        <li><strong>Inflation:</strong> Low inflation supports strong currency</li>
+        <li><strong>GDP Growth:</strong> Strong economy = stronger currency</li>
+        <li><strong>Employment Data:</strong> Jobs report impacts sentiment</li>
+        <li><strong>Central Bank Policy:</strong> Fed, ECB, BoE announcements</li>
+      </ul>
+
+      <h2>Trading Styles</h2>
+      <div class="tip-box">
+        <h3>Scalping</h3>
+        <p>Hold trades for seconds to minutes; profit from tiny price changes.</p>
+      </div>
+
+      <div class="tip-box">
+        <h3>Day Trading</h3>
+        <p>Open and close positions within a single day; avoid overnight risk.</p>
+      </div>
+
+      <div class="tip-box">
+        <h3>Swing Trading</h3>
+        <p>Hold positions for days to weeks; ride short-term trends.</p>
+      </div>
+
+      <h2>Brokers, Platforms & Regulations</h2>
+      <p>Popular brokers: MetaTrader 4/5, TradingView, Interactive Brokers, IC Markets.</p>
+      <p>Regulatory bodies: SEC (USA), FCA (UK), RBI (India), ASIC (Australia).</p>
+      <p>Always choose regulated brokers to protect your funds.</p>
+
+      <h2>Forex Trading Calculator</h2>
+      <div class="calculator">
+        <label for="lotSize">Lot Size:</label>
+        <select id="lotSize">
+          <option value="0.01">Micro (0.01)</option>
+          <option value="0.1">Mini (0.1)</option>
+          <option value="1">Standard (1)</option>
+        </select>
+
+        <label for="entryPrice">Entry Price:</label>
+        <input type="number" id="entryPrice" placeholder="e.g., 1.1000" step="0.0001" value="1.1000" />
+
+        <label for="exitPrice">Exit Price:</label>
+        <input type="number" id="exitPrice" placeholder="e.g., 1.1050" step="0.0001" value="1.1050" />
+
+        <label for="leverage">Leverage:</label>
+        <select id="leverage">
+          <option value="10">1:10</option>
+          <option value="20">1:20</option>
+          <option value="50">1:50</option>
+          <option value="100">1:100</option>
+        </select>
+
+        <label for="accountSize">Account Size (₹):</label>
+        <input type="number" id="accountSize" placeholder="e.g., 100000" min="1000" value="100000" />
+
+        <button onclick="calculateForex()">Calculate P&L</button>
+
+        <div id="result" class="result" style="display: none;">
+          <p><strong>Profit/Loss:</strong> ₹<span id="profitLoss"></span></p>
+          <p><strong>Percentage Return:</strong> <span id="returnPercent"></span>%</p>
+          <p><strong>Required Margin:</strong> ₹<span id="marginRequired"></span></p>
+          <p><strong>Risk Level:</strong> <span id="riskLevel"></span></p>
+        </div>
+      </div>
+
+      <h2>Conclusion</h2>
+      <p>Currency trading offers exciting opportunities but demands discipline, knowledge, and risk management. With proper education, tools, and strategy, you can navigate the global forex market effectively.</p>
+      <p>Start with a demo account, learn technical and fundamental analysis, and never trade with money you can't afford to lose.</p>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2024 Financial Wisdom Blog | Designed for clarity and beauty</p>
+    </div>
+  </div>
+
+  <script>
+    function calculateForex() {
+      const lotSize = parseFloat(document.getElementById("lotSize").value);
+      const entryPrice = parseFloat(document.getElementById("entryPrice").value);
+      const exitPrice = parseFloat(document.getElementById("exitPrice").value);
+      const leverage = parseFloat(document.getElementById("leverage").value);
+      const accountSize = parseFloat(document.getElementById("accountSize").value);
+
+      if (!entryPrice || !exitPrice || !accountSize) {
+        alert("Please enter valid values.");
+        return;
+      }
+
+      // Calculate profit/loss per pip
+      const pipValue = 10; // Assuming 1 pip = 0.0001 for major pairs
+      const pipsMoved = (exitPrice - entryPrice) * 10000; // Convert to pips
+      const profitLoss = pipsMoved * lotSize * 10; // Approximate profit in INR
+
+      // Percentage return
+      const returnPercent = (profitLoss / accountSize) * 100;
+
+      // Margin required
+      const marginRequired = (accountSize / leverage);
+
+      // Risk level
+      let riskLevel = "Low";
+      if (Math.abs(returnPercent) > 5) riskLevel = "Medium";
+      if (Math.abs(returnPercent) > 10) riskLevel = "High";
+
+      // Display results
+      document.getElementById("profitLoss").textContent = profitLoss.toFixed(2);
+      document.getElementById("returnPercent").textContent = returnPercent.toFixed(2);
+      document.getElementById("marginRequired").textContent = marginRequired.toFixed(2);
+      document.getElementById("riskLevel").textContent = riskLevel;
+
+      document.getElementById("result").style.display = "block";
+    }
+  </script>
+</body>
+</html>
