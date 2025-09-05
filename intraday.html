@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"></meta>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A data-driven look at the high-stakes world of day trading, revealing the opportunities, risks, and psychological toll">
   <title>The Intraday Trading Reality</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<style>
+  <style>
     .infographic-container {
         font-family: 'Inter', sans-serif;
         background-color: #003f5c;
@@ -19,29 +20,19 @@
         border-radius: 0.5rem;
         margin: 1rem 0;
     }
-    /* Set most text to white, but allow specific overrides */
     .infographic-container p, 
     .infographic-container li, 
     .infographic-container span {
         color: #ffffff;
     }
-    /* Set all headings to orange */
-    .infographic-container h1 {
-      	color : #f97316;
-  }
-  
-  .infographic-container h2 {
-      	color : #f97316;
-  }
-  
-  .infographic-container h3 {
-      	color : #f97316;
-  }
-  
-  .infographic-container h4 {
-      	color : #00FF00;
-  }
-   
+    .infographic-container h1,
+    .infographic-container h2,
+    .infographic-container h3 {
+        color: #f97316;
+    }
+    .infographic-container h4 {
+        color: #00FF00;
+    }
     .infographic-container .chart-container {
         position: relative;
         width: 100%;
@@ -62,7 +53,7 @@
     }
     .infographic-container .stat-number {
         font-weight: 900;
-        color: #00FF00; /* Vibrant orange for 70% */
+        color: #00FF00;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
     .infographic-container .flowchart-step {
@@ -77,20 +68,49 @@
     }
     .infographic-container .flowchart-arrow {
         font-size: 2.5rem;
-        color: #f97316; /* Orange to match headings and stat-number */
+        color: #f97316;
         line-height: 1;
     }
-</style>
-
+    /* Optimizations */
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+    @media (max-width: 767px) {
+        .infographic-container .flowchart-step {
+            margin-bottom: 1rem;
+        }
+        .infographic-container .flowchart-arrow.md\:hidden {
+            transform: rotate(90deg);
+            margin: 0.5rem 0;
+        }
+    }
+    .animate-fade-in {
+        animation: fadeIn 0.8s ease-in-out;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
 <div class="infographic-container antialiased">
     <div class="container mx-auto p-4 md:p-8">
-        <header class="text-center mb-12">
+        <header class="text-center mb-12 animate-fade-in">
             <h1 class="text-4xl md:text-6xl font-black mb-2">The Intraday Trading Reality</h1>
             <p class="text-lg md:text-xl max-w-3xl mx-auto">A data-driven look at the high-stakes world of day trading, revealing the opportunities, the stark risks, and the psychological toll.</p>
         </header>
 
         <main class="space-y-16">
-            <section id="intro" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <section id="intro" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center animate-fade-in">
                 <div class="card rounded-lg shadow-xl p-6">
                     <h2 class="text-3xl font-bold mb-4">What is Intraday Trading?</h2>
                     <p class="mb-4">Intraday trading is the practice of buying and selling financial instruments within the same trading day. All positions are closed before the market ends, meaning no shares are held overnight. The primary goal is to profit from small, frequent price fluctuations.</p>
@@ -124,7 +144,7 @@
                 </div>
             </section>
 
-            <section id="reality-check" class="text-center">
+            <section id="reality-check" class="text-center animate-fade-in">
                 <h2 class="text-4xl font-black mb-2">The Statistical Reality of Profitability</h2>
                 <p class="text-lg max-w-3xl mx-auto mb-8">While the allure of quick profits is strong, extensive research reveals a sobering truth. The vast majority of individuals who attempt intraday trading do not succeed financially.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -136,60 +156,60 @@
                     <div class="card rounded-lg shadow-xl p-6">
                         <h3 class="text-2xl font-bold mb-4">Profit & Loss Distribution</h3>
                         <p class="text-sm mb-4">This chart visualizes the stark divide between the small fraction of profitable traders and the majority who incur losses.</p>
-                        <div class="chart-container h-64 md:h-80">
+                        <div class="chart-container h-64 md:h-80" role="img" aria-label="Pie chart showing 70% of traders lose money while 30% make profit">
                             <canvas id="profitabilityChart"></canvas>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="demographics">
+            <section id="demographics" class="animate-fade-in">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="card rounded-lg shadow-xl p-6">
                         <h3 class="text-2xl font-bold mb-4">Loss Rates Among Different Trader Groups</h3>
                         <p class="text-sm mb-4">The data shows that losses are even more prevalent among specific demographics, particularly those who are young or trade very frequently, highlighting the steep learning curve and high costs.</p>
-                        <div class="chart-container h-80 md:h-96">
+                        <div class="chart-container h-80 md:h-96" role="img" aria-label="Bar chart showing loss rates by trader demographics">
                             <canvas id="demographicsChart"></canvas>
                         </div>
                     </div>
                     <div class="card rounded-lg shadow-xl p-6">
                         <h3 class="text-2xl font-bold mb-4">The Trader Attrition Rate</h3>
                         <p class="text-sm mb-4">The high-pressure environment leads to a massive dropout rate. This chart illustrates how few traders remain active over a five-year period, emphasizing the unsustainability for most.</p>
-                        <div class="chart-container h-80 md:h-96">
+                        <div class="chart-container h-80 md:h-96" role="img" aria-label="Line chart showing trader attrition over 5 years">
                             <canvas id="attritionChart"></canvas>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="psychology">
+            <section id="psychology" class="animate-fade-in">
                 <h2 class="text-4xl font-black text-center mb-8">The Psychological Gauntlet</h2>
                 <p class="text-lg max-w-3xl mx-auto mb-8 text-center">Beyond financial risk, day trading exerts a significant mental and emotional toll. Success is often determined by one's ability to master their own psychology and avoid common cognitive biases.</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="card rounded-lg shadow-xl p-6 text-center">
-                        <div class="text-6xl mb-4">😨</div>
+                        <div class="text-6xl mb-4" aria-hidden="true">😨</div>
                         <h3 class="text-xl font-bold mb-2">Fear & Greed</h3>
                         <p class="text-sm">The two primary emotions that derail trading plans. Fear of loss leads to premature exits, while greed for more profit encourages holding on too long.</p>
                     </div>
                     <div class="card rounded-lg shadow-xl p-6 text-center">
-                        <div class="text-6xl mb-4">📉</div>
+                        <div class="text-6xl mb-4" aria-hidden="true">📉</div>
                         <h3 class="text-xl font-bold mb-2">Loss Aversion</h3>
                         <p class="text-sm">The pain of a loss is felt more intensely than the pleasure of an equal gain, causing traders to hold losing positions in the irrational hope of a rebound.</p>
                     </div>
                     <div class="card rounded-lg shadow-xl p-6 text-center">
-                        <div class="text-6xl mb-4">🏃‍♂️💨</div>
+                        <div class="text-6xl mb-4" aria-hidden="true">🏃‍♂️💨</div>
                         <h3 class="text-xl font-bold mb-2">FOMO</h3>
                         <p class="text-sm">(Fear of Missing Out) The urge to jump into a rapidly moving stock without analysis, often leading to buying at the peak just before a reversal.</p>
                     </div>
                     <div class="card rounded-lg shadow-xl p-6 text-center">
-                        <div class="text-6xl mb-4">😠</div>
+                        <div class="text-6xl mb-4" aria-hidden="true">😠</div>
                         <h3 class="text-xl font-bold mb-2">Revenge Trading</h3>
                         <p class="text-sm">Making impulsive, high-risk trades out of frustration after a loss in an attempt to "get even" with the market, which almost always leads to bigger losses.</p>
                     </div>
                 </div>
             </section>
 
-            <section id="risk-management">
+            <section id="risk-management" class="animate-fade-in">
                 <h2 class="text-4xl font-black text-center mb-8">The Playbook for Survival: Risk Management</h2>
                 <p class="text-lg max-w-3xl mx-auto mb-10 text-center">For the few who succeed, survival is not about predicting the future; it's about rigorously managing risk. A disciplined strategy is the only shield against catastrophic loss.</p>
                 <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
@@ -197,20 +217,20 @@
                         <h3 class="font-bold text-lg">1. The 1% Rule</h3>
                         <p class="text-sm">Never risk more than 1% of your total trading capital on a single trade. This ensures a string of losses won't wipe you out.</p>
                     </div>
-                    <div class="flowchart-arrow hidden md:block">→</div>
-                    <div class="flowchart-arrow md:hidden">↓</div>
+                    <div class="flowchart-arrow hidden md:block" aria-hidden="true">→</div>
+                    <div class="flowchart-arrow md:hidden" aria-hidden="true">↓</div>
                     <div class="flowchart-step w-full md:w-1/4">
                         <h3 class="font-bold text-lg">2. Set a Stop-Loss</h3>
                         <p class="text-sm">Before entering a trade, determine the exact price point at which you will exit if the market moves against you. This is non-negotiable.</p>
                     </div>
-                    <div class="flowchart-arrow hidden md:block">→</div>
-                    <div class="flowchart-arrow md:hidden">↓</div>
+                    <div class="flowchart-arrow hidden md:block" aria-hidden="true">→</div>
+                    <div class="flowchart-arrow md:hidden" aria-hidden="true">↓</div>
                     <div class="flowchart-step w-full md:w-1/4">
                         <h3 class="font-bold text-lg">3. Define Your Target</h3>
                         <p class="text-sm">Identify a realistic profit target. A good risk/reward ratio is at least 1:2, meaning your potential profit is double your potential loss.</p>
                     </div>
-                    <div class="flowchart-arrow hidden md:block">→</div>
-                    <div class="flowchart-arrow md:hidden">↓</div>
+                    <div class="flowchart-arrow hidden md:block" aria-hidden="true">→</div>
+                    <div class="flowchart-arrow md:hidden" aria-hidden="true">↓</div>
                     <div class="flowchart-step w-full md:w-1/4">
                         <h3 class="font-bold text-lg">4. Execute & Journal</h3>
                         <p class="text-sm">Execute the trade according to the plan. Win or lose, record the trade in a journal to analyze your performance and identify patterns.</p>
@@ -218,7 +238,7 @@
                 </div>
             </section>
             
-            <section id="conclusion" class="text-center card rounded-lg shadow-xl p-8">
+            <section id="conclusion" class="text-center card rounded-lg shadow-xl p-8 animate-fade-in">
                 <h2 class="text-4xl font-black mb-4">Final Verdict: A Path for the Few</h2>
                 <p class="text-lg max-w-4xl mx-auto">
                     The data is unequivocal: intraday trading is a high-risk, negative-sum game for the vast majority of participants. The psychological pressures are immense, and the odds are heavily stacked in favor of a small group of professional, well-capitalized traders.
@@ -230,163 +250,187 @@
         </main>
 
         <footer class="text-center mt-16 pt-8 border-t border-gray-700">
-            <p class="text-sm">Infographic created based on comprehensive research into intraday trading risks and statistics. Data is illustrative of findings from major regulatory and academic studies. This is not financial advice.</p>
+            <p class="text-sm">Infographic created based on comprehensive research into intraday trading risks and statistics. Data is illustrative of findings from major regulatory and academic studies. This is not financial advice.  Author : Anil Kumar VT</p>
         </footer>
     </div>
 </div>
 
 <script>
-    const tooltipTitleCallback = (tooltipItems) => {
-        const item = tooltipItems[0];
-        let label = item.chart.data.labels[item.dataIndex];
-        if (Array.isArray(label)) {
-            return label.join(' ');
-        }
-        return label;
-    };
-    
-    const wrapLabel = (label) => {
-        const maxLength = 16;
-        if (label.length <= maxLength) {
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
             return label;
-        }
-        const words = label.split(' ');
-        const lines = [];
-        let currentLine = '';
-        for (const word of words) {
-            if ((currentLine + word).length > maxLength) {
-                lines.push(currentLine.trim());
-                currentLine = '';
+        };
+        
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) {
+                return label;
             }
-            currentLine += word + ' ';
-        }
-        lines.push(currentLine.trim());
-        return lines;
-    };
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        };
 
-    const chartColors = ['#d45087', '#003f5c', '#ff7c43', '#f97316', '#665191'];
-
-    const profitabilityCtx = document.getElementById('profitabilityChart').getContext('2d');
-    new Chart(profitabilityCtx, {
-        type: 'doughnut',
-        data: {
-            labels: ['Traders Who Lost Money', 'Traders Who Made Profit'],
-            datasets: [{
-                label: 'Trader Profitability',
-                data: [70, 30],
-                backgroundColor: ['#d45087', '#f97316'],
-                borderColor: '#2f4b7c',
-                borderWidth: 4
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        color: '#ffffff',
-                        font: { size: 14 }
+        // Initialize charts
+        const profitabilityCtx = document.getElementById('profitabilityChart').getContext('2d');
+        new Chart(profitabilityCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Traders Who Lost Money', 'Traders Who Made Profit'],
+                datasets: [{
+                    label: 'Trader Profitability',
+                    data: [70, 30],
+                    backgroundColor: ['#d45087', '#f97316'],
+                    borderColor: '#2f4b7c',
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#ffffff',
+                            font: { size: 14 }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: { title: tooltipTitleCallback }
                     }
                 },
-                tooltip: {
-                    callbacks: { title: tooltipTitleCallback }
-                }
-            },
-            cutout: '60%'
-        }
-    });
+                cutout: '60%'
+            }
+        });
 
-    const demographicsCtx = document.getElementById('demographicsChart').getContext('2d');
-    const rawDemographicsLabels = ['All Traders', 'Young Traders (Under 30)', 'Frequent Traders (>500/yr)'];
-    new Chart(demographicsCtx, {
-        type: 'bar',
-        data: {
-            labels: rawDemographicsLabels.map(wrapLabel),
-            datasets: [{
-                label: '% of Traders Losing Money',
-                data: [70, 76, 80],
-                backgroundColor: ['#665191', '#d45087', '#f95d6a'],
-                borderColor: '#2f4b7c',
-                borderWidth: 2,
-                borderRadius: 5
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            indexAxis: 'y',
-            scales: {
-                x: {
-                    beginAtZero: true,
-                    max: 100,
-                    grid: { color: 'rgba(255, 255, 255, 0.1)' },
-                    ticks: { 
-                        color: '#ffffff',
-                        font: { size: 12 },
-                        callback: function(value) { return value + "%" }
+        const demographicsCtx = document.getElementById('demographicsChart').getContext('2d');
+        const rawDemographicsLabels = ['All Traders', 'Young Traders (Under 30)', 'Frequent Traders (>500/yr)'];
+        new Chart(demographicsCtx, {
+            type: 'bar',
+            data: {
+                labels: rawDemographicsLabels.map(wrapLabel),
+                datasets: [{
+                    label: '% of Traders Losing Money',
+                    data: [70, 76, 80],
+                    backgroundColor: ['#665191', '#d45087', '#f95d6a'],
+                    borderColor: '#2f4b7c',
+                    borderWidth: 2,
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        ticks: { 
+                            color: '#ffffff',
+                            font: { size: 12 },
+                            callback: function(value) { return value + "%" }
+                        }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { color: '#ffffff', font: { size: 14 } }
                     }
                 },
-                y: {
-                    grid: { display: false },
-                    ticks: { color: '#ffffff', font: { size: 14 } }
-                }
-            },
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    callbacks: { title: tooltipTitleCallback }
-                }
-            }
-        }
-    });
-    
-    const attritionCtx = document.getElementById('attritionChart').getContext('2d');
-    new Chart(attritionCtx, {
-        type: 'line',
-        data: {
-            labels: ['Start', 'Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
-            datasets: [{
-                label: '% of Traders Remaining',
-                data: [100, 40, 20, 13, 10, 7],
-                backgroundColor: 'rgba(255, 124, 67, 0.3)',
-                borderColor: '#ff7c43',
-                pointBackgroundColor: '#ffffff',
-                pointBorderColor: '#ff7c43',
-                pointHoverRadius: 7,
-                pointRadius: 5,
-                borderWidth: 3,
-                fill: true,
-                tension: 0.1
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                x: {
-                    grid: { display: false },
-                    ticks: { color: '#ffffff', font: { size: 14 } }
-                },
-                y: {
-                    beginAtZero: true,
-                    max: 100,
-                    grid: { color: 'rgba(255, 255, 255, 0.1)' },
-                    ticks: { 
-                        color: '#ffffff',
-                        font: { size: 12 },
-                        callback: function(value) { return value + "%" }
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: { title: tooltipTitleCallback }
                     }
                 }
+            }
+        });
+        
+        const attritionCtx = document.getElementById('attritionChart').getContext('2d');
+        new Chart(attritionCtx, {
+            type: 'line',
+            data: {
+                labels: ['Start', 'Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                datasets: [{
+                    label: '% of Traders Remaining',
+                    data: [100, 40, 20, 13, 10, 7],
+                    backgroundColor: 'rgba(255, 124, 67, 0.3)',
+                    borderColor: '#ff7c43',
+                    pointBackgroundColor: '#ffffff',
+                    pointBorderColor: '#ff7c43',
+                    pointHoverRadius: 7,
+                    pointRadius: 5,
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.1
+                }]
             },
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    callbacks: { title: tooltipTitleCallback }
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#ffffff', font: { size: 14 } }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        ticks: { 
+                            color: '#ffffff',
+                            font: { size: 12 },
+                            callback: function(value) { return value + "%" }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: { title: tooltipTitleCallback }
+                    }
                 }
             }
-        }
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
     });
 </script>
+</body>
 </html>
