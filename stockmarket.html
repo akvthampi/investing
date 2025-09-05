@@ -3,35 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive guide to stock market investing covering basics, strategies, risk management, and common mistakes">
+    <meta name="keywords" content="stock market, investing, stocks, shares, trading, investment strategies">
     <title>Stock Market Investing Guide</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #2ecc71;
+            --warning-color: #f39c12;
+            --light-bg: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-radius: 10px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
-            color: #333;
+            color: var(--text-color);
             line-height: 1.6;
             padding: 20px;
+            min-height: 100vh;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: white;
+            background: var(--card-bg);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
 
         header {
-            background: linear-gradient(90deg, #2c3e50, #4ca1af);
+            background: linear-gradient(90deg, var(--primary-color), #4ca1af);
             color: white;
             padding: 40px 20px;
             text-align: center;
@@ -55,10 +74,11 @@
 
         section {
             margin-bottom: 40px;
+            scroll-margin-top: 20px;
         }
 
         h2 {
-            color: #2c3e50;
+            color: var(--primary-color);
             font-size: 2rem;
             margin-bottom: 20px;
             padding-bottom: 10px;
@@ -66,7 +86,7 @@
         }
 
         h3 {
-            color: #3498db;
+            color: var(--secondary-color);
             font-size: 1.5rem;
             margin: 25px 0 15px;
         }
@@ -94,10 +114,10 @@
 
         .card {
             background: #f8f9fa;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
         }
 
         .card:hover {
@@ -105,32 +125,32 @@
         }
 
         .card h3 {
-            color: #2c3e50;
+            color: var(--primary-color);
             margin-top: 0;
         }
 
         .chart-container {
             height: 300px;
             margin: 30px 0;
-            border-radius: 10px;
-            background: white;
+            border-radius: var(--border-radius);
+            background: var(--card-bg);
             padding: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--box-shadow);
         }
 
         .quote {
             background: #e3f2fd;
-            border-left: 4px solid #2196f3;
+            border-left: 4px solid var(--secondary-color);
             padding: 20px;
             margin: 30px 0;
-            border-radius: 0 8px 8px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
             font-style: italic;
         }
 
         .key-term {
             background: #fff8e1;
             padding: 15px;
-            border-radius: 8px;
+            border-radius: var(--border-radius);
             margin: 20px 0;
         }
 
@@ -148,7 +168,7 @@
         .strategy {
             background: #e8f5e9;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
         }
 
         .strategy h4 {
@@ -157,7 +177,7 @@
         }
 
         footer {
-            background: #2c3e50;
+            background: var(--primary-color);
             color: white;
             text-align: center;
             padding: 20px;
@@ -190,7 +210,7 @@
         .metric {
             background: #f0f7ff;
             padding: 15px;
-            border-radius: 8px;
+            border-radius: var(--border-radius);
             text-align: center;
         }
 
@@ -199,6 +219,151 @@
             margin-bottom: 10px;
         }
 
+        /* Table of Contents */
+        .toc {
+            background: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .toc ul {
+            list-style-type: none;
+            margin-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 10px;
+        }
+
+        .toc a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .toc a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--secondary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Dark mode toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--box-shadow);
+            z-index: 1000;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            --text-color: #f0f0f0;
+            --light-bg: #1a1a1a;
+            --card-bg: #2d2d2d;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+
+        body.dark-mode .card {
+            background: #3d3d3d;
+        }
+
+        body.dark-mode .comparison-table th {
+            background-color: #3d3d3d;
+        }
+
+        body.dark-mode .key-term {
+            background: #4d3d1d;
+        }
+
+        body.dark-mode .strategy {
+            background: #1d3d2d;
+        }
+
+        body.dark-mode .metric {
+            background: #1d2d3d;
+        }
+
+        body.dark-mode .quote {
+            background: #1d2d3d;
+        }
+
+        /* Accessibility improvements */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .card {
+                transition: none;
+            }
+        }
+
+        /* Responsive design */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.2rem;
@@ -219,22 +384,56 @@
             .chart-container {
                 height: 250px;
             }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .dark-mode-toggle {
+                top: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+            }
         }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+    
     <div class="container">
         <header>
             <h1><i class="fas fa-chart-line"></i> Stock Market Investing Guide</h1>
             <p class="subtitle">Learn how to build wealth through intelligent stock market investing</p>
         </header>
 
-        <div class="content">
+        <div class="content" id="main-content">
+            <div class="toc">
+                <h3>Table of Contents</h3>
+                <ul>
+                    <li><a href="#introduction">Introduction to Stock Market Investing</a></li>
+                    <li><a href="#basic-concepts">Basic Concepts: Stocks, Shares, and the Market</a></li>
+                    <li><a href="#how-market-works">How the Stock Market Works</a></li>
+                    <li><a href="#stock-selection">Strategies for Selecting Stocks</a></li>
+                    <li><a href="#risk-management">Risk Management Strategies</a></li>
+                    <li><a href="#investment-approaches">Long-Term vs Short-Term Investing</a></li>
+                    <li><a href="#common-mistakes">Common Investing Mistakes to Avoid</a></li>
+                    <li><a href="#getting-started">Getting Started with Stock Market Investing</a></li>
+                </ul>
+            </div>
+
             <section id="introduction">
                 <h2>Introduction to Stock Market Investing</h2>
                 <p>Stock market investing is one of the most effective ways to build wealth over time. While it comes with risks, understanding how the market works and employing sound investment strategies can help you achieve your financial goals.</p>
                 
-                <div class="chart-container">
+                <div class="chart-container" role="img" aria-label="Chart showing historical S&P 500 performance from 2013 to 2023">
                     <canvas id="marketGrowthChart"></canvas>
                 </div>
                 
@@ -276,7 +475,7 @@
                 <h2>How the Stock Market Works</h2>
                 <p>The stock market operates through a network of exchanges where buyers and sellers meet to trade stocks. Prices are determined by supply and demand - when more people want to buy a stock than sell it, the price goes up, and vice versa.</p>
                 
-                <div class="chart-container">
+                <div class="chart-container" role="img" aria-label="Chart showing example stock price movement over one year">
                     <canvas id="priceChart"></canvas>
                 </div>
                 
@@ -314,7 +513,7 @@
                     </div>
                 </div>
                 
-                <div class="chart-container">
+                <div class="chart-container" role="img" aria-label="Chart showing comparative company analysis metrics">
                     <canvas id="analysisChart"></canvas>
                 </div>
                 
@@ -361,7 +560,7 @@
                     </div>
                 </div>
                 
-                <div class="chart-container">
+                <div class="chart-container" role="img" aria-label="Chart showing example of a well-diversified portfolio">
                     <canvas id="diversificationChart"></canvas>
                 </div>
                 
@@ -372,7 +571,7 @@
             <section id="investment-approaches">
                 <h2>Long-Term vs Short-Term Investing</h2>
                 
-                <div class="chart-container">
+                <div class="chart-container" role="img" aria-label="Chart comparing long-term vs short-term investment performance">
                     <canvas id="longVsShortChart"></canvas>
                 </div>
                 
@@ -423,7 +622,7 @@
             <section id="common-mistakes">
                 <h2>Common Investing Mistakes to Avoid</h2>
                 
-                <div class="chart-container">
+                <div class="chart-container" role="img" aria-label="Chart showing common investor mistakes by prevalence">
                     <canvas id="mistakesChart"></canvas>
                 </div>
                 
@@ -439,7 +638,7 @@
             <section id="getting-started">
                 <h2>Getting Started with Stock Market Investing</h2>
                 
-                <div class="chart-container">
+                <div class="chart-container" role="img" aria-label="Chart showing initial investment amounts for beginners">
                     <canvas id="startingChart"></canvas>
                 </div>
                 
@@ -456,224 +655,283 @@
         </div>
 
         <footer>
-            <p>Stock Market Investing Guide | © 2023 Financial Wisdom Hub</p>
+            <p>Stock Market Investing Guide | © 2023 Financial Wisdom Hub; Author : Anil Kumar VT</p>
             <p>Remember: All investments involve risk, and past performance is not indicative of future results.</p>
         </footer>
     </div>
 
+    <div class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <script>
-        // Market Growth Chart
-        const marketGrowthCtx = document.getElementById('marketGrowthChart').getContext('2d');
-        new Chart(marketGrowthCtx, {
-            type: 'line',
-            data: {
-                labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
-                datasets: [{
-                    label: 'S&P 500 Index',
-                    data: [1600, 1880, 2040, 2240, 2680, 2500, 3230, 3750, 4770, 3840, 4550],
-                    borderColor: '#3498db',
-                    backgroundColor: 'rgba(52, 152, 219, 0.1)',
-                    fill: true,
-                    tension: 0.3
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Historical S&P 500 Performance (2013-2023)'
-                    },
-                    subtitle: {
-                        display: true,
-                        text: 'Long-term market growth despite periodic corrections'
-                    }
-                }
-            }
-        });
+        // Create a chart initialization function to reduce repetition
+        function createChart(elementId, config) {
+            const ctx = document.getElementById(elementId).getContext('2d');
+            return new Chart(ctx, config);
+        }
 
-        // Price chart
-        const priceCtx = document.getElementById('priceChart').getContext('2d');
-        new Chart(priceCtx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                datasets: [{
-                    label: 'Stock Price',
-                    data: [105, 110, 115, 113, 120, 118, 125, 130, 128, 135, 140, 145],
-                    borderColor: '#3498db',
-                    backgroundColor: 'rgba(52, 152, 219, 0.1)',
-                    fill: true,
-                    tension: 0.4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Example Stock Price Movement Over One Year'
-                    }
-                }
-            }
-        });
-
-        // Analysis Chart
-        const analysisCtx = document.getElementById('analysisChart').getContext('2d');
-        new Chart(analysisCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Tech Company A', 'Tech Company B', 'Tech Company C', 'Tech Company D'],
-                datasets: [
-                    {
-                        label: 'P/E Ratio',
-                        data: [25, 18, 32, 22],
-                        backgroundColor: 'rgba(52, 152, 219, 0.7)',
-                    },
-                    {
-                        label: 'ROE (%)',
-                        data: [18, 22, 15, 20],
-                        backgroundColor: 'rgba(46, 204, 113, 0.7)',
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Comparative Company Analysis Metrics'
-                    }
-                }
-            }
-        });
-
-        // Diversification chart
-        const diversifyCtx = document.getElementById('diversificationChart').getContext('2d');
-        new Chart(diversifyCtx, {
-            type: 'pie',
-            data: {
-                labels: ['Technology', 'Healthcare', 'Financials', 'Consumer Goods', 'Energy', 'Other'],
-                datasets: [{
-                    data: [30, 20, 15, 15, 10, 10],
-                    backgroundColor: [
-                        '#3498db',
-                        '#2ecc71',
-                        '#e74c3c',
-                        '#f39c12',
-                        '#9b59b6',
-                        '#95a5a6'
-                    ]
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Example of a Well-Diversified Portfolio'
-                    }
-                }
-            }
-        });
-
-        // Long vs Short Term Chart
-        const longVsShortCtx = document.getElementById('longVsShortChart').getContext('2d');
-        new Chart(longVsShortCtx, {
-            type: 'line',
-            data: {
-                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5', 'Year 6', 'Year 7', 'Year 8', 'Year 9', 'Year 10'],
-                datasets: [{
-                    label: 'Long-Term Buy & Hold',
-                    data: [10000, 11200, 12500, 14000, 15700, 17500, 19600, 22000, 24600, 27500],
-                    borderColor: '#2ecc71',
-                    backgroundColor: 'rgba(46, 204, 113, 0.1)',
-                    fill: true,
-                    tension: 0.3
+        // Initialize all charts when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Market Growth Chart
+            createChart('marketGrowthChart', {
+                type: 'line',
+                data: {
+                    labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+                    datasets: [{
+                        label: 'S&P 500 Index',
+                        data: [1600, 1880, 2040, 2240, 2680, 2500, 3230, 3750, 4770, 3840, 4550],
+                        borderColor: '#3498db',
+                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    }]
                 },
-                {
-                    label: 'Short-Term Trading',
-                    data: [10000, 10500, 9800, 11200, 10800, 10200, 11500, 11000, 10700, 12000],
-                    borderColor: '#e74c3c',
-                    backgroundColor: 'rgba(231, 76, 60, 0.1)',
-                    fill: true,
-                    tension: 0.3
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Long-Term vs Short-Term Investment Performance'
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Historical S&P 500 Performance (2013-2023)'
+                        }
                     }
                 }
-            }
-        });
+            });
 
-        // Mistakes Chart
-        const mistakesCtx = document.getElementById('mistakesChart').getContext('2d');
-        new Chart(mistakesCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Emotional Decisions', 'Chasing Performance', 'Market Timing', 'Overconcentration', 'Ignoring Fees', 'Other'],
-                datasets: [{
-                    data: [35, 25, 15, 12, 8, 5],
-                    backgroundColor: [
-                        '#e74c3c',
-                        '#f39c12',
-                        '#9b59b6',
-                        '#34495e',
-                        '#95a5a6',
-                        '#3498db'
-                    ]
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Common Investor Mistakes by Prevalence'
+            // Price chart
+            createChart('priceChart', {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'Stock Price',
+                        data: [105, 110, 115, 113, 120, 118, 125, 130, 128, 135, 140, 145],
+                        borderColor: '#3498db',
+                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Example Stock Price Movement Over One Year'
+                        }
                     }
                 }
-            }
-        });
+            });
 
-        // Starting Chart
-        const startingCtx = document.getElementById('startingChart').getContext('2d');
-        new Chart(startingCtx, {
-            type: 'bar',
-            data: {
-                labels: ['<$100', '$100-500', '$500-1000', '$1000-5000', '$5000+'],
-                datasets: [{
-                    label: 'Number of Investors',
-                    data: [42, 28, 15, 10, 5],
-                    backgroundColor: [
-                        'rgba(52, 152, 219, 0.7)',
-                        'rgba(46, 204, 113, 0.7)',
-                        'rgba(155, 89, 182, 0.7)',
-                        'rgba(241, 196, 15, 0.7)',
-                        'rgba(230, 126, 34, 0.7)'
+            // Analysis Chart
+            createChart('analysisChart', {
+                type: 'bar',
+                data: {
+                    labels: ['Tech Company A', 'Tech Company B', 'Tech Company C', 'Tech Company D'],
+                    datasets: [
+                        {
+                            label: 'P/E Ratio',
+                            data: [25, 18, 32, 22],
+                            backgroundColor: 'rgba(52, 152, 219, 0.7)',
+                        },
+                        {
+                            label: 'ROE (%)',
+                            data: [18, 22, 15, 20],
+                            backgroundColor: 'rgba(46, 204, 113, 0.7)',
+                        }
                     ]
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Initial Investment Amounts for Beginners'
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Comparative Company Analysis Metrics'
+                        }
                     }
                 }
+            });
+
+            // Diversification chart
+            createChart('diversificationChart', {
+                type: 'pie',
+                data: {
+                    labels: ['Technology', 'Healthcare', 'Financials', 'Consumer Goods', 'Energy', 'Other'],
+                    datasets: [{
+                        data: [30, 20, 15, 15, 10, 10],
+                        backgroundColor: [
+                            '#3498db',
+                            '#2ecc71',
+                            '#e74c3c',
+                            '#f39c12',
+                            '#9b59b6',
+                            '#95a5a6'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Example of a Well-Diversified Portfolio'
+                        }
+                    }
+                }
+            });
+
+            // Long vs Short Term Chart
+            createChart('longVsShortChart', {
+                type: 'line',
+                data: {
+                    labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5', 'Year 6', 'Year 7', 'Year 8', 'Year 9', 'Year 10'],
+                    datasets: [{
+                        label: 'Long-Term Buy & Hold',
+                        data: [10000, 11200, 12500, 14000, 15700, 17500, 19600, 22000, 24600, 27500],
+                        borderColor: '#2ecc71',
+                        backgroundColor: 'rgba(46, 204, 113, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    },
+                    {
+                        label: 'Short-Term Trading',
+                        data: [10000, 10500, 9800, 11200, 10800, 10200, 11500, 11000, 10700, 12000],
+                        borderColor: '#e74c3c',
+                        backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Long-Term vs Short-Term Investment Performance'
+                        }
+                    }
+                }
+            });
+
+            // Mistakes Chart
+            createChart('mistakesChart', {
+                type: 'doughnut',
+                data: {
+                    labels: ['Emotional Decisions', 'Chasing Performance', 'Market Timing', 'Overconcentration', 'Ignoring Fees', 'Other'],
+                    datasets: [{
+                        data: [35, 25, 15, 12, 8, 5],
+                        backgroundColor: [
+                            '#e74c3c',
+                            '#f39c12',
+                            '#9b59b6',
+                            '#34495e',
+                            '#95a5a6',
+                            '#3498db'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Common Investor Mistakes by Prevalence'
+                        }
+                    }
+                }
+            });
+
+            // Starting Chart
+            createChart('startingChart', {
+                type: 'bar',
+                data: {
+                    labels: ['<$100', '$100-500', '$500-1000', '$1000-5000', '$5000+'],
+                    datasets: [{
+                        label: 'Number of Investors',
+                        data: [42, 28, 15, 10, 5],
+                        backgroundColor: [
+                            'rgba(52, 152, 219, 0.7)',
+                            'rgba(46, 204, 113, 0.7)',
+                            'rgba(155, 89, 182, 0.7)',
+                            'rgba(241, 196, 15, 0.7)',
+                            'rgba(230, 126, 34, 0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Initial Investment Amounts for Beginners'
+                        }
+                    }
+                }
+            });
+
+            // Back to top button functionality
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Dark mode toggle functionality
+            const darkModeToggle = document.querySelector('.dark-mode-toggle');
+            const body = document.body;
+            
+            // Check for saved dark mode preference
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                body.classList.add('dark-mode');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
             }
+            
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('darkMode', 'enabled');
+                    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                } else {
+                    localStorage.setItem('darkMode', 'disabled');
+                    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>
