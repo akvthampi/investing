@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Definitive Guide to Post Office Savings Schemes in India</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Import fonts globally - safe to leave as is */
+        /* Import fonts */
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Merriweather:wght@400;700&display=swap');
         
-        /* Scoped variables - prefixed with pog- */
-        .post-office-guide {
+        /* CSS Variables */
+        :root {
             --pog-primary: #0072b5;
             --pog-secondary: #ff6b00;
             --pog-accent: #00a651;
@@ -17,202 +18,189 @@
             --pog-dark: #333;
             --pog-gray: #666;
             --pog-light-gray: #eee;
+            --pog-white: #fff;
+            --pog-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            --pog-border-radius: 12px;
+            --pog-transition: all 0.3s ease;
         }
         
-        /* Scoped animations */
-        @keyframes pog-fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes pog-fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes pog-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(0, 114, 181, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(0, 114, 181, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 114, 181, 0); }
-        }
-        
-        /* Scoped styles - all prefixed with .post-office-guide */
-        .post-office-guide * {
+        /* Base Styles */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        .post-office-guide {
+        body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             color: var(--pog-dark);
             background-color: #f9f9f9;
             padding: 0;
             margin: 0;
+            overflow-x: hidden;
         }
         
-        .post-office-guide .container {
+        .post-office-guide {
+            max-width: 100%;
+            overflow: hidden;
+        }
+        
+        .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
         
-        .post-office-guide header {
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Merriweather', serif;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--pog-white);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--pog-primary);
+            border-bottom: 2px solid var(--pog-light-gray);
+            padding-bottom: 10px;
+            margin: 2.5rem 0 1.5rem;
+            position: relative;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: var(--pog-secondary);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--pog-secondary);
+            margin: 1.8rem 0 1rem;
+        }
+        
+        h4 {
+            font-size: 1.25rem;
+            color: var(--pog-accent);
+            margin: 1.5rem 0 0.8rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--pog-gray);
+            line-height: 1.7;
+        }
+        
+        a {
+            color: var(--pog-primary);
+            text-decoration: none;
+            transition: var(--pog-transition);
+        }
+        
+        a:hover {
+            color: var(--pog-secondary);
+            text-decoration: underline;
+        }
+        
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.8rem;
+        }
+        
+        li {
+            margin-bottom: 0.7rem;
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
             background: linear-gradient(135deg, var(--pog-primary), #004d80);
             color: white;
             padding: 40px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom: 2rem;
         }
         
-        .post-office-guide header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
-            opacity: 0.1;
-        }
-        
-        .post-office-guide h1, 
-        .post-office-guide h2, 
-        .post-office-guide h3, 
-        .post-office-guide h4 {
-            font-family: 'Merriweather', serif;
-            margin-bottom: 1rem;
-        }
-      
-      .post-office-guide header p {
-    color: var(--pog-secondary); /* Orange color */
-    font-weight: 500; /* Optional: makes text slightly bolder */
-    text-shadow: 0 1px 2px rgba(0,0,0,0.2); /* Optional: improves readability */
-}
-        
-        .post-office-guide h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            animation: pog-fadeInDown 1s ease;
-        }
-        
-        .post-office-guide h2 {
-            font-size: 2rem;
-            color: var(--pog-primary);
-            border-bottom: 2px solid var(--pog-light-gray);
-            padding-bottom: 10px;
-            margin: 2rem 0 1.5rem;
-            position: relative;
-        }
-        
-        .post-office-guide h2::after {
-            content: "";
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100px;
-            height: 2px;
-            background: var(--pog-secondary);
-        }
-        
-        .post-office-guide h3 {
-            font-size: 1.5rem;
+        header p {
             color: var(--pog-secondary);
-            margin: 1.5rem 0 1rem;
-        }
-        
-        .post-office-guide h4 {
+            font-weight: 500;
             font-size: 1.2rem;
-            color: var(--pog-accent);
-            margin: 1.2rem 0 0.8rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            margin-bottom: 0;
         }
         
-        .post-office-guide p {
-            margin-bottom: 1rem;
-            color: var(--pog-gray);
-        }
-        
-        .post-office-guide a {
-            color: var(--pog-primary);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .post-office-guide a:hover {
-            color: var(--pog-secondary);
-            text-decoration: underline;
-        }
-        
-        .post-office-guide ul, 
-        .post-office-guide ol {
-            margin-bottom: 1.5rem;
-            padding-left: 2rem;
-        }
-        
-        .post-office-guide li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .post-office-guide .intro {
+        /* Intro Section */
+        .intro {
             font-size: 1.1rem;
             line-height: 1.8;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             background-color: white;
             padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: var(--pog-border-radius);
+            box-shadow: var(--pog-shadow);
             border-left: 4px solid var(--pog-primary);
-            animation: pog-fadeIn 1.5s ease;
         }
         
-        .post-office-guide .scheme-category {
+        /* Scheme Categories */
+        .scheme-category {
             background-color: white;
-            border-radius: 8px;
+            border-radius: var(--pog-border-radius);
             padding: 25px;
             margin-bottom: 30px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: var(--pog-shadow);
+            transition: var(--pog-transition);
         }
         
-        .post-office-guide .scheme-category:hover {
+        .scheme-category:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         
-        .post-office-guide .scheme-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
+        .scheme-item {
+            margin-bottom: 1.8rem;
+            padding-bottom: 1.8rem;
             border-bottom: 1px dashed var(--pog-light-gray);
         }
         
-        .post-office-guide .scheme-item:last-child {
+        .scheme-item:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
         }
         
-        .post-office-guide .scheme-highlight {
-            background-color: rgba(0, 114, 181, 0.1);
-            padding: 15px;
-            border-radius: 6px;
-            margin: 15px 0;
+        .scheme-highlight {
+            background-color: rgba(0, 114, 181, 0.08);
+            padding: 16px;
+            border-radius: 8px;
+            margin: 18px 0;
             border-left: 3px solid var(--pog-primary);
         }
         
-        .post-office-guide .tax-badge {
+        .scheme-highlight p {
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+        
+        .tax-badge {
             display: inline-block;
             background-color: var(--pog-accent);
             color: white;
-            padding: 3px 8px;
+            padding: 4px 10px;
             border-radius: 4px;
             font-size: 0.8rem;
             font-weight: bold;
@@ -220,120 +208,286 @@
             vertical-align: middle;
         }
         
-        .post-office-guide table {
+        /* Table */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin: 2.5rem 0;
+            -webkit-overflow-scrolling: touch;
+            border-radius: var(--pog-border-radius);
+            box-shadow: var(--pog-shadow);
+        }
+        
+        table {
             width: 100%;
             border-collapse: collapse;
-            margin: 2rem 0;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            animation: pog-fadeIn 1s ease;
-            overflow-x: auto;
-            display: block;
+            min-width: 800px;
         }
         
-        .post-office-guide th {
+        th {
             background-color: var(--pog-primary);
             color: white;
-            padding: 12px 15px;
+            padding: 14px 16px;
             text-align: left;
+            font-weight: 500;
+            position: sticky;
+            left: 0;
         }
         
-        .post-office-guide td {
-            padding: 10px 15px;
+        td {
+            padding: 12px 16px;
             border-bottom: 1px solid var(--pog-light-gray);
+            vertical-align: top;
         }
         
-        .post-office-guide tr:nth-child(even) {
+        tr:nth-child(even) {
             background-color: #f8fafc;
         }
         
-        .post-office-guide tr:hover {
+        tr:hover {
             background-color: rgba(0, 114, 181, 0.05);
         }
         
-        .post-office-guide .note {
+        .note {
             font-size: 0.9rem;
             color: var(--pog-gray);
             font-style: italic;
             margin-top: -1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         
-        .post-office-guide .comparison {
+        /* Comparison Sections */
+        .comparison {
             background-color: white;
             padding: 25px;
-            border-radius: 8px;
-            margin: 2rem 0;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            border-radius: var(--pog-border-radius);
+            margin: 2.5rem 0;
+            box-shadow: var(--pog-shadow);
         }
         
-        .post-office-guide .comparison-item {
-            margin-bottom: 1.5rem;
+        .comparison-item {
+            margin-bottom: 1.8rem;
         }
         
-        .post-office-guide footer {
-            background-color: var(--pog-dark);
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-            margin-top: 50px;
-        }
-        
-        .post-office-guide .citation {
+        /* Citation */
+        .citation {
             font-size: 0.9rem;
             color: var(--pog-gray);
-            margin-top: 3rem;
+            margin-top: 3.5rem;
         }
         
-        .post-office-guide .citation ol {
+        .citation ol {
             list-style-type: none;
             counter-reset: citation-counter;
+            padding-left: 0;
         }
         
-        .post-office-guide .citation li {
+        .citation li {
             counter-increment: citation-counter;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             text-align: left;
             position: relative;
-            padding-left: 2.5rem;
+            padding-left: 2.8rem;
+            line-height: 1.6;
         }
         
-        .post-office-guide .citation li::before {
+        .citation li::before {
             content: counter(citation-counter) ".";
             position: absolute;
             left: 0;
             color: var(--pog-primary);
             font-weight: bold;
+            font-size: 1rem;
         }
         
-        .post-office-guide .pulse {
-            animation: pog-pulse 2s infinite;
+        /* Footer */
+        footer {
+            background-color: var(--pog-dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
         }
         
-        /* Responsive */
+        footer p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+        }
+        
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: sticky;
+            top: 0;
+            background: var(--pog-primary);
+            z-index: 1000;
+            padding: 12px 20px;
+            display: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .mobile-nav select {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 6px;
+            border: none;
+            font-size: 1rem;
+            background: white;
+            color: var(--pog-dark);
+            cursor: pointer;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--pog-primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            transition: var(--pog-transition);
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        
+        .back-to-top:hover {
+            background: var(--pog-secondary);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .post-office-guide h1 {
+            .container {
+                padding: 0 16px;
+            }
+            
+            h1 {
                 font-size: 2rem;
             }
             
-            .post-office-guide h2 {
+            h2 {
                 font-size: 1.7rem;
+                margin: 2.2rem 0 1.3rem;
             }
             
-            .post-office-guide .container {
-                padding: 15px;
+            h3 {
+                font-size: 1.4rem;
             }
             
-            .post-office-guide table {
+            h4 {
+                font-size: 1.2rem;
+            }
+            
+            header {
+                padding: 30px 16px;
+            }
+            
+            .intro, .scheme-category, .comparison {
+                padding: 20px;
+            }
+            
+            .mobile-nav {
+                display: block;
+            }
+            
+            .table-container {
+                border-radius: 8px;
+            }
+            
+            th, td {
+                padding: 10px 12px;
                 font-size: 0.9rem;
             }
             
-            .post-office-guide th, 
-            .post-office-guide td {
-                padding: 8px 10px;
+            ul, ol {
+                padding-left: 1.5rem;
+            }
+            
+            .citation li {
+                padding-left: 2.2rem;
+            }
+            
+            .scheme-highlight {
+                padding: 14px;
             }
         }
         
-        /* Print styles */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            header {
+                padding: 25px 12px;
+            }
+            
+            .intro, .scheme-category, .comparison {
+                padding: 18px;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+                font-size: 0.85rem;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animated {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        /* Print Styles */
         @media print {
             .post-office-guide {
                 background: none;
@@ -341,41 +495,62 @@
                 font-size: 12pt;
             }
             
-            .post-office-guide .container {
+            .container {
                 padding: 0;
                 max-width: 100%;
             }
             
-            .post-office-guide header {
+            header {
                 background: none;
                 color: black;
                 padding: 20px 0;
             }
             
-            .post-office-guide .scheme-category, 
-            .post-office-guide .comparison {
+            .scheme-category, .comparison {
                 box-shadow: none;
                 page-break-inside: avoid;
             }
             
-            .post-office-guide h2 {
+            h2 {
                 page-break-after: avoid;
             }
             
-            .post-office-guide a::after {
+            a::after {
                 content: " (" attr(href) ")";
                 font-size: 0.8em;
                 font-weight: normal;
             }
             
-            .post-office-guide footer {
+            footer, .mobile-nav, .back-to-top {
                 display: none;
+            }
+            
+            .table-container {
+                overflow: visible;
+            }
+            
+            table {
+                min-width: auto;
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <div class="post-office-guide">
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav">
+            <select onchange="location = this.value;">
+                <option value="#">Jump to section...</option>
+                <option value="#introduction">Introduction</option>
+                <option value="#scheme-portfolio">Scheme Portfolio</option>
+                <option value="#data-matrix">Data Matrix</option>
+                <option value="#strategic-insights">Strategic Insights</option>
+                <option value="#practical-guide">Practical Guide</option>
+                <option value="#conclusion">Conclusion</option>
+            </select>
+        </nav>
+
         <header>
             <div class="container">
                 <h1>The Definitive Guide to Post Office Savings Schemes in India</h1>
@@ -505,122 +680,124 @@
                 <h2>A Comprehensive Data Matrix: Eligibility, Investments, and Returns</h2>
                 <p>The following table provides a comprehensive overview of the key features of the various Post Office savings schemes, allowing for a quick comparison of their attributes.</p>
                 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Scheme Name</th>
-                            <th>Interest Rate</th>
-                            <th>Compounding</th>
-                            <th>Min/Max Investment</th>
-                            <th>Tenure</th>
-                            <th>Tax Benefit (80C)</th>
-                            <th>Tax on Interest</th>
-                            <th>Ideal For</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>PPF</td>
-                            <td>7.1% p.a.</td>
-                            <td>Yearly</td>
-                            <td>Min ₹500, Max ₹1.5 lakh/FY</td>
-                            <td>15 years</td>
-                            <td>Yes</td>
-                            <td>Tax-Free (EEE)</td>
-                            <td>Long-term tax-free wealth creation</td>
-                        </tr>
-                        <tr>
-                            <td>SSA</td>
-                            <td>8.2% p.a.</td>
-                            <td>Yearly</td>
-                            <td>Min ₹250, Max ₹1.5 lakh/FY</td>
-                            <td>21 years</td>
-                            <td>Yes</td>
-                            <td>Tax-Free (EEE)</td>
-                            <td>Girl child's education or marriage</td>
-                        </tr>
-                        <tr>
-                            <td>SCSS</td>
-                            <td>8.2% p.a.</td>
-                            <td>Quarterly</td>
-                            <td>Min ₹1,000, Max ₹30 lakh</td>
-                            <td>5 years</td>
-                            <td>Yes</td>
-                            <td>Taxable</td>
-                            <td>Regular income for senior citizens</td>
-                        </tr>
-                        <tr>
-                            <td>MIS</td>
-                            <td>7.4% p.a.</td>
-                            <td>Monthly Payout</td>
-                            <td>Min ₹1,000, Max ₹4.5/9 lakh</td>
-                            <td>5 years</td>
-                            <td>No</td>
-                            <td>Taxable</td>
-                            <td>Steady monthly income</td>
-                        </tr>
-                        <tr>
-                            <td>NSC</td>
-                            <td>7.7% p.a.</td>
-                            <td>Yearly</td>
-                            <td>Min ₹1,000, No Max</td>
-                            <td>5 years</td>
-                            <td>Yes</td>
-                            <td>Taxable (reinvested interest for 4 years is deductible)</td>
-                            <td>Medium-term tax savings</td>
-                        </tr>
-                        <tr>
-                            <td>KVP</td>
-                            <td>7.5% p.a.</td>
-                            <td>Yearly</td>
-                            <td>Min ₹1,000, No Max</td>
-                            <td>115 months</td>
-                            <td>No</td>
-                            <td>Taxable (but maturity is tax-free)</td>
-                            <td>Doubling capital with a fixed horizon</td>
-                        </tr>
-                        <tr>
-                            <td>MSSC</td>
-                            <td>7.5% p.a.</td>
-                            <td>Quarterly</td>
-                            <td>Min ₹1,000, Max ₹2 lakh</td>
-                            <td>2 years</td>
-                            <td>No</td>
-                            <td>Taxable</td>
-                            <td>Short-term, high-yield investment for women</td>
-                        </tr>
-                        <tr>
-                            <td>TD</td>
-                            <td>1 yr: 6.9%; 2 yr: 7.0%; 3 yr: 7.1%; 5 yr: 7.5%</td>
-                            <td>Annually</td>
-                            <td>Min ₹1,000, No Max</td>
-                            <td>1, 2, 3, or 5 years</td>
-                            <td>Yes (only 5-year TD)</td>
-                            <td>Taxable</td>
-                            <td>Fixed-term savings, tax-saving FD alternative</td>
-                        </tr>
-                        <tr>
-                            <td>RD</td>
-                            <td>6.7% p.a.</td>
-                            <td>Quarterly</td>
-                            <td>Min ₹100/month, No Max</td>
-                            <td>5 years</td>
-                            <td>No</td>
-                            <td>Taxable</td>
-                            <td>Systematic monthly savings</td>
-                        </tr>
-                        <tr>
-                            <td>SB</td>
-                            <td>4.0% p.a.</td>
-                            <td>Yearly</td>
-                            <td>Min ₹500, No Max</td>
-                            <td>No lock-in</td>
-                            <td>No</td>
-                            <td>Exempted up to ₹10,000</td>
-                            <td>Basic savings and liquidity</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scheme Name</th>
+                                <th>Interest Rate</th>
+                                <th>Compounding</th>
+                                <th>Min/Max Investment</th>
+                                <th>Tenure</th>
+                                <th>Tax Benefit (80C)</th>
+                                <th>Tax on Interest</th>
+                                <th>Ideal For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PPF</td>
+                                <td>7.1% p.a.</td>
+                                <td>Yearly</td>
+                                <td>Min ₹500, Max ₹1.5 lakh/FY</td>
+                                <td>15 years</td>
+                                <td>Yes</td>
+                                <td>Tax-Free (EEE)</td>
+                                <td>Long-term tax-free wealth creation</td>
+                            </tr>
+                            <tr>
+                                <td>SSA</td>
+                                <td>8.2% p.a.</td>
+                                <td>Yearly</td>
+                                <td>Min ₹250, Max ₹1.5 lakh/FY</td>
+                                <td>21 years</td>
+                                <td>Yes</td>
+                                <td>Tax-Free (EEE)</td>
+                                <td>Girl child's education or marriage</td>
+                            </tr>
+                            <tr>
+                                <td>SCSS</td>
+                                <td>8.2% p.a.</td>
+                                <td>Quarterly</td>
+                                <td>Min ₹1,000, Max ₹30 lakh</td>
+                                <td>5 years</td>
+                                <td>Yes</td>
+                                <td>Taxable</td>
+                                <td>Regular income for senior citizens</td>
+                            </tr>
+                            <tr>
+                                <td>MIS</td>
+                                <td>7.4% p.a.</td>
+                                <td>Monthly Payout</td>
+                                <td>Min ₹1,000, Max ₹4.5/9 lakh</td>
+                                <td>5 years</td>
+                                <td>No</td>
+                                <td>Taxable</td>
+                                <td>Steady monthly income</td>
+                            </tr>
+                            <tr>
+                                <td>NSC</td>
+                                <td>7.7% p.a.</td>
+                                <td>Yearly</td>
+                                <td>Min ₹1,000, No Max</td>
+                                <td>5 years</td>
+                                <td>Yes</td>
+                                <td>Taxable (reinvested interest for 4 years is deductible)</td>
+                                <td>Medium-term tax savings</td>
+                            </tr>
+                            <tr>
+                                <td>KVP</td>
+                                <td>7.5% p.a.</td>
+                                <td>Yearly</td>
+                                <td>Min ₹1,000, No Max</td>
+                                <td>115 months</td>
+                                <td>No</td>
+                                <td>Taxable (but maturity is tax-free)</td>
+                                <td>Doubling capital with a fixed horizon</td>
+                            </tr>
+                            <tr>
+                                <td>MSSC</td>
+                                <td>7.5% p.a.</td>
+                                <td>Quarterly</td>
+                                <td>Min ₹1,000, Max ₹2 lakh</td>
+                                <td>2 years</td>
+                                <td>No</td>
+                                <td>Taxable</td>
+                                <td>Short-term, high-yield investment for women</td>
+                            </tr>
+                            <tr>
+                                <td>TD</td>
+                                <td>1 yr: 6.9%; 2 yr: 7.0%; 3 yr: 7.1%; 5 yr: 7.5%</td>
+                                <td>Annually</td>
+                                <td>Min ₹1,000, No Max</td>
+                                <td>1, 2, 3, or 5 years</td>
+                                <td>Yes (only 5-year TD)</td>
+                                <td>Taxable</td>
+                                <td>Fixed-term savings, tax-saving FD alternative</td>
+                            </tr>
+                            <tr>
+                                <td>RD</td>
+                                <td>6.7% p.a.</td>
+                                <td>Quarterly</td>
+                                <td>Min ₹100/month, No Max</td>
+                                <td>5 years</td>
+                                <td>No</td>
+                                <td>Taxable</td>
+                                <td>Systematic monthly savings</td>
+                            </tr>
+                            <tr>
+                                <td>SB</td>
+                                <td>4.0% p.a.</td>
+                                <td>Yearly</td>
+                                <td>Min ₹500, No Max</td>
+                                <td>No lock-in</td>
+                                <td>No</td>
+                                <td>Exempted up to ₹10,000</td>
+                                <td>Basic savings and liquidity</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 
                 <p class="note">Note: Interest rates are subject to change by the Ministry of Finance on a quarterly basis, but rates on a scheme are fixed for the entire tenure at the time of deposit.</p>
             </section>
@@ -739,6 +916,46 @@
                 <p>All information is subject to change. Please verify with official sources before making investment decisions.</p>
             </div>
         </footer>
+
+        <!-- Back to top button -->
+        <a href="#" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </div>
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Add animation to elements when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.scheme-category, .comparison, .intro');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
 </html>
