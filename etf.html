@@ -13,110 +13,132 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary-blue: #1a3c6e;
+            --secondary-blue: #2e5a9e;
+            --accent-orange: #e67e22;
+            --light-bg: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-dark: #333333;
+            --text-medium: #666666;
+            --text-light: #888888;
+            --border-color: #eaeaea;
+            --success-green: #27ae60;
+            --warning-red: #e74c3c;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
-            color: #333;
+            background: var(--light-bg);
+            color: var(--text-dark);
             line-height: 1.6;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
         }
 
         .infographic-container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            padding: 40px;
-            max-width: 1200px;
+            background: var(--card-bg);
+            border-radius: 0;
+            box-shadow: none;
+            padding: 20px 16px;
+            max-width: 100%;
             width: 100%;
-            margin: 20px 0;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #eaeaea;
-        }
-
-        h1 {
-            color: #1a3c6e;
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            background: linear-gradient(90deg, #1a3c6e, #2e5a9e);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 700;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 800px;
             margin: 0 auto;
         }
 
+        /* Header Styles */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--text-medium);
+            max-width: 100%;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
         .highlight {
-            color: #e67e22;
+            color: var(--accent-orange);
             font-weight: 600;
         }
 
+        /* Section Styles */
         .section {
-            margin: 40px 0;
-            padding: 30px;
-            background: #f9fbfd;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 30px 0;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
 
         .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-hover);
         }
 
         h2 {
-            color: #2e5a9e;
-            font-size: 2rem;
-            margin-bottom: 20px;
+            color: var(--secondary-blue);
+            font-size: 1.4rem;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
+            line-height: 1.3;
         }
 
         h2 i {
-            background: #2e5a9e;
+            background: var(--secondary-blue);
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1rem;
+            flex-shrink: 0;
         }
 
         p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            color: #444;
+            font-size: 1rem;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
+        /* List Container */
         .list-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
             margin-top: 20px;
         }
 
         .list-box {
             background: linear-gradient(135deg, #e8f4ff 0%, #d1e6ff 100%);
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 10px rgba(46, 90, 158, 0.1);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
         }
 
         .list-box.risks {
@@ -124,9 +146,9 @@
         }
 
         .list-box h3 {
-            color: #1a3c6e;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -142,6 +164,7 @@
             display: flex;
             align-items: flex-start;
             gap: 10px;
+            font-size: 0.95rem;
         }
 
         .list-box li:last-child {
@@ -149,39 +172,63 @@
         }
 
         .list-box li i {
-            color: #2e5a9e;
-            margin-top: 5px;
+            color: var(--secondary-blue);
+            margin-top: 3px;
+            flex-shrink: 0;
         }
 
         .list-box.risks li i {
-            color: #e67e22;
+            color: var(--accent-orange);
         }
 
+        /* Table Styles */
         .table-container {
             overflow-x: auto;
-            margin-top: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+        }
+
+        .table-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .table-container::-webkit-scrollbar-thumb {
+            background: var(--secondary-blue);
+            border-radius: 3px;
         }
 
         .comparison-table, .tax-table, .etf-table {
             width: 100%;
             border-collapse: collapse;
-            background: white;
+            background: var(--card-bg);
+            min-width: 600px;
         }
 
         .comparison-table th, .tax-table th, .etf-table th {
-            background: linear-gradient(90deg, #1a3c6e, #2e5a9e);
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
             color: white;
-            padding: 18px 15px;
+            padding: 14px 12px;
             text-align: left;
             font-weight: 600;
+            font-size: 0.9rem;
+            position: sticky;
+            left: 0;
         }
 
         .comparison-table td, .tax-table td, .etf-table td {
-            padding: 15px;
+            padding: 12px;
             border-bottom: 1px solid #eee;
             text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table tr:nth-child(even) td,
+        .tax-table tr:nth-child(even) td, 
+        .etf-table tr:nth-child(even) td {
+            background-color: #f9fbfd;
         }
 
         .comparison-table tr:hover td, 
@@ -190,17 +237,20 @@
             background-color: #f0f7ff;
         }
 
-        .comparison-chart {
-            max-width: 100%;
-            height: auto;
-            margin-top: 30px;
+        /* Chart Styles */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+            margin-top: 25px;
         }
 
+        /* Mechanism Diagram */
         .mechanism-diagram {
             background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
-            border-radius: 15px;
-            padding: 30px;
-            margin-top: 25px;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-top: 20px;
             position: relative;
             overflow: hidden;
         }
@@ -211,94 +261,241 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #2e5a9e, #e67e22);
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-blue), var(--accent-orange));
         }
 
+        /* Strategy Box */
         .strategy-box {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
         }
 
         .strategy-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            border-top: 4px solid #e67e22;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent-orange);
         }
 
         .strategy-card h3 {
-            color: #e67e22;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+            color: var(--accent-orange);
+            margin-bottom: 12px;
+            font-size: 1.2rem;
         }
 
+        /* Footer */
         footer {
             text-align: center;
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid #eee;
-            color: #666;
-            font-size: 1rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-medium);
+            font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: sticky;
+            top: 0;
+            background: var(--primary-blue);
+            z-index: 1000;
+            padding: 12px 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .mobile-nav select {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 6px;
+            border: none;
+            font-size: 1rem;
+            background: white;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            transition: var(--transition);
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-orange);
+            transform: translateY(-5px);
+        }
+
+        /* Improved list styles */
+        ul:not(.list-box ul) {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        ul:not(.list-box ul) li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        ul:not(.list-box ul) li i {
+            color: var(--secondary-blue);
+            margin-right: 8px;
+        }
+
+        /* Media Queries */
+        @media (min-width: 480px) {
             .infographic-container {
-                padding: 25px 15px;
+                padding: 25px 20px;
             }
-
+            
             h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
+            
+            .section {
+                padding: 25px;
+            }
+        }
 
+        @media (min-width: 768px) {
+            .infographic-container {
+                padding: 30px;
+                border-radius: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+                margin: 20px auto;
+                max-width: 1200px;
+            }
+            
+            h1 {
+                font-size: 2.4rem;
+            }
+            
             h2 {
                 font-size: 1.7rem;
             }
-
-            .section {
-                padding: 20px;
+            
+            .subtitle {
+                font-size: 1.1rem;
             }
-
-            .list-container, .strategy-box {
-                grid-template-columns: 1fr;
+            
+            .list-container {
+                flex-direction: row;
+            }
+            
+            .strategy-box {
+                flex-direction: row;
+            }
+            
+            .mobile-nav {
+                display: none;
             }
         }
 
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-
+        @media (min-width: 1024px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 2.8rem;
             }
-
-            .subtitle {
-                font-size: 1rem;
+            
+            .section {
+                padding: 30px;
             }
+            
+            .list-box, .strategy-card {
+                padding: 25px;
+            }
+        }
 
-            p {
-                font-size: 1rem;
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+                font-size: 12pt;
+                padding: 0;
+            }
+            
+            .infographic-container {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0;
+                width: 100%;
+            }
+            
+            .section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            .mobile-nav, .back-to-top {
+                display: none;
+            }
+            
+            .table-container {
+                overflow: visible;
+            }
+            
+            .comparison-table, .tax-table, .etf-table {
+                min-width: auto;
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <select onchange="location = this.value;">
+            <option value="#">Jump to section...</option>
+            <option value="#what-is-etf">What is an ETF?</option>
+            <option value="#etf-comparison">ETFs vs. Index Funds vs. Stocks</option>
+            <option value="#advantages-risks">Advantages & Risks</option>
+            <option value="#taxation">ETF Taxation</option>
+            <option value="#strategies">Investment Strategies</option>
+            <option value="#mechanics">ETF Mechanics</option>
+            <option value="#sebi-role">SEBI's Role</option>
+            <option value="#popular-etfs">Popular Indian ETFs</option>
+            <option value="#getting-started">Getting Started</option>
+        </select>
+    </nav>
+
     <div class="infographic-container">
         <header>
             <h1><i class="fas fa-chart-line"></i> ETF at a glance for Indian Investors</h1>
             <p class="subtitle"><span class="highlight">Exchange-Traded Funds (ETFs)</span> are baskets of securities (stocks, bonds, commodities) traded on exchanges like NSE/BSE, offering <span class="highlight">diversification</span>, <span class="highlight">low costs</span>, and <span class="highlight">trading flexibility</span> for Indian retail investors.</p>
         </header>
 
-        <section class="section">
+        <section class="section" id="what-is-etf">
             <h2><i class="fas fa-question-circle"></i> What is an ETF?</h2>
             <p>An ETF tracks indices like <span class="highlight">Nifty 50</span> or <span class="highlight">Sensex</span>, providing instant exposure to multiple assets. Traded like stocks, ETFs offer <span class="highlight">real-time pricing</span> and <span class="highlight">daily transparency</span> of holdings, ideal for cost-effective portfolio building.</p>
         </section>
 
-        <section class="section">
+        <section class="section" id="etf-comparison">
             <h2><i class="fas fa-balance-scale"></i> ETFs vs. Index Funds vs. Stocks</h2>
             <p>ETFs balance diversification and cost, differing from index funds and individual stocks in trading, costs, and management.</p>
             <div class="table-container">
@@ -351,10 +548,12 @@
                     </tbody>
                 </table>
             </div>
-            <canvas id="diversificationChart" class="comparison-chart"></canvas>
+            <div class="chart-container">
+                <canvas id="diversificationChart"></canvas>
+            </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="advantages-risks">
             <h2><i class="fas fa-lightbulb"></i> Advantages & Risks of ETFs</h2>
             <div class="list-container">
                 <div class="list-box">
@@ -380,7 +579,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="taxation">
             <h2><i class="fas fa-rupee-sign"></i> ETF Taxation in India (2025)</h2>
             <p>Taxation varies by ETF type and holding period. Dividends are taxed per income slab.</p>
             <div class="table-container">
@@ -418,7 +617,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="strategies">
             <h2><i class="fas fa-chess-board"></i> Investment Strategies</h2>
             <div class="strategy-box">
                 <div class="strategy-card">
@@ -432,7 +631,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="mechanics">
             <h2><i class="fas fa-cogs"></i> ETF Mechanics: Creation & Redemption</h2>
             <div class="mechanism-diagram">
                 <p><span class="highlight">Authorized Participants (APs)</span> manage ETF share creation/redemption, ensuring prices align with <span class="highlight">Net Asset Value (NAV)</span> via arbitrage.</p>
@@ -442,7 +641,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="sebi-role">
             <h2><i class="fas fa-shield-alt"></i> SEBI's Role in ETFs</h2>
             <p>The <span class="highlight">Securities and Exchange Board of India (SEBI)</span> regulates ETFs, ensuring transparency and investor protection by:</p>
             <ul>
@@ -454,7 +653,7 @@
             <p>Recent SEBI updates allow equity ETFs as collateral for margin trading and standardize gold/silver ETF valuations.</p>
         </section>
 
-        <section class="section">
+        <section class="section" id="popular-etfs">
             <h2><i class="fas fa-star"></i> Popular Indian ETFs</h2>
             <div class="table-container">
                 <table class="etf-table">
@@ -502,7 +701,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="getting-started">
             <h2><i class="fas fa-rocket"></i> Getting Started</h2>
             <p>Open a <span class="highlight">Demat and trading account</span> with brokers like Zerodha, Angel Broking, or HDFC. Assess your <span class="highlight">investment goals, risk tolerance, and ETF liquidity</span>. Choose ETFs with <span class="highlight">low expense ratios</span> and <span class="highlight">high trading volume</span> for cost-effective investing.</p>
             <p>Consider starting with broad market ETFs like Nifty 50 or Sensex ETFs before exploring sectoral or thematic ETFs. Monitor your investments regularly and rebalance your portfolio as needed.</p>
@@ -513,8 +712,14 @@
         </footer>
     </div>
 
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the chart
             const ctx = document.getElementById('diversificationChart').getContext('2d');
             new Chart(ctx, {
                 type: 'bar',
@@ -540,6 +745,7 @@
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
                         legend: {
                             display: false
@@ -548,21 +754,21 @@
                             display: true,
                             text: 'Diversification Comparison (2025)',
                             font: {
-                                size: 18,
+                                size: 16,
                                 weight: 'bold'
                             },
                             padding: {
                                 top: 10,
-                                bottom: 30
+                                bottom: 20
                             }
                         },
                         tooltip: {
                             backgroundColor: 'rgba(0, 0, 0, 0.7)',
                             titleFont: {
-                                size: 16
+                                size: 14
                             },
                             bodyFont: {
-                                size: 14
+                                size: 13
                             },
                             callbacks: {
                                 label: function(context) {
@@ -582,18 +788,63 @@
                                 display: true,
                                 text: 'Diversification (%)',
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     weight: 'bold'
+                                }
+                            },
+                            ticks: {
+                                font: {
+                                    size: 11
                                 }
                             }
                         },
                         x: {
                             grid: {
                                 display: false
+                            },
+                            ticks: {
+                                font: {
+                                    size: 11
+                                }
                             }
                         }
                     }
                 }
+            });
+            
+            // Back to top button functionality
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Add animation to elements when they come into view
+            const animatedElements = document.querySelectorAll('.section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(element);
             });
         });
     </script>
