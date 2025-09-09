@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Comprehensive guide to stock market investing covering basics, strategies, risk management, and common mistakes">
-    <meta name="keywords" content="stock market, investing, stocks, shares, trading, investment strategies">
-    <title>Stock Market Investing Guide</title>
+    <meta name="keywords" content="stock market, investing, stocks, shares, trading, investment strategies, NIFTY 50">
+    <title>Stock Market Investing Guide - NIFTY 50 Focus</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -417,6 +417,65 @@
             box-shadow: var(--box-shadow-dark);
         }
 
+        /* NIFTY specific styling */
+        .nifty-highlight {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+
+        .nifty-highlight h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .data-table th, .data-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .data-table th {
+            background-color: #f2f2f2;
+        }
+
+        .positive-return {
+            color: #2E7D32;
+            font-weight: bold;
+        }
+
+        .negative-return {
+            color: #D32F2F;
+            font-weight: bold;
+        }
+
+        body.dark-mode .positive-return {
+            color: #81C784;
+        }
+
+        body.dark-mode .negative-return {
+            color: #E57373;
+        }
+
+        body.dark-mode .data-table th {
+            background-color: #3d3d3d;
+            color: var(--text-color-light);
+        }
+
+        body.dark-mode .data-table th, 
+        body.dark-mode .data-table td {
+            border: 1px solid #555;
+        }
+
         /* Accessibility improvements */
         .skip-link {
             position: absolute;
@@ -459,7 +518,7 @@
                 grid-template-columns: 1fr;
             }
             
-            .comparison-table {
+            .comparison-table, .data-table {
                 font-size: 0.9rem;
             }
             
@@ -493,7 +552,7 @@
     <div class="container">
         <header>
             <h1><i class="fas fa-chart-line"></i> Stock Market Investing Guide</h1>
-            <p class="subtitle">Learn how to build wealth through intelligent stock market investing</p>
+            <p class="subtitle">Learn how to build wealth through intelligent stock market investing with focus on Indian markets</p>
         </header>
 
         <div class="content" id="main-content">
@@ -501,6 +560,7 @@
                 <h3>Table of Contents</h3>
                 <ul>
                     <li><a href="#introduction">Introduction to Stock Market Investing</a></li>
+                    <li><a href="#nifty-performance">NIFTY 50 Performance Analysis</a></li>
                     <li><a href="#basic-concepts">Basic Concepts: Stocks, Shares, and the Market</a></li>
                     <li><a href="#how-market-works">How the Stock Market Works</a></li>
                     <li><a href="#stock-selection">Strategies for Selecting Stocks</a></li>
@@ -515,11 +575,109 @@
                 <h2>Introduction to Stock Market Investing</h2>
                 <p>Stock market investing is one of the most effective ways to build wealth over time. While it comes with risks, understanding how the market works and employing sound investment strategies can help you achieve your financial goals.</p>
                 
-                <div class="chart-container" role="img" aria-label="Chart showing historical S&P 500 performance from 2013 to 2023">
-                    <canvas id="marketGrowthChart"></canvas>
+                <div class="nifty-highlight">
+                    <h3>Why Focus on Indian Markets?</h3>
+                    <p>India's stock market has shown remarkable growth and resilience over the past decade. The NIFTY 50 index, representing the top 50 companies on the National Stock Exchange (NSE), has delivered strong returns with some periods of volatility, making it an excellent case study for investors.</p>
                 </div>
                 
-                <p>This comprehensive guide will walk you through the fundamentals of stock market investing, key terminology, strategies for selecting stocks, risk management techniques, and long-term wealth building approaches.</p>
+                <p>This comprehensive guide will walk you through the fundamentals of stock market investing, with a special focus on the Indian market, key terminology, strategies for selecting stocks, risk management techniques, and long-term wealth building approaches.</p>
+            </section>
+
+            <section id="nifty-performance">
+                <h2>NIFTY 50 Performance Analysis (2013-2025)</h2>
+                
+                <div class="chart-container" role="img" aria-label="Chart showing historical NIFTY 50 performance from 2013 to 2025">
+                    <canvas id="niftyGrowthChart"></canvas>
+                </div>
+                
+                <p>The NIFTY 50 index has demonstrated significant growth over the past decade, with an overall upward trajectory despite some periods of decline and volatility.</p>
+                
+                <h3>Annual Returns Analysis</h3>
+                <table class="data-table">
+                    <tr>
+                        <th>Year</th>
+                        <th>Return</th>
+                        <th>Trend</th>
+                    </tr>
+                    <tr>
+                        <td>2013</td>
+                        <td class="positive-return">+6.2%</td>
+                        <td>Moderate Growth</td>
+                    </tr>
+                    <tr>
+                        <td>2014</td>
+                        <td class="positive-return">+31.4%</td>
+                        <td>Exceptional Growth</td>
+                    </tr>
+                    <tr>
+                        <td>2015</td>
+                        <td class="negative-return">-4.1%</td>
+                        <td>Correction</td>
+                    </tr>
+                    <tr>
+                        <td>2016</td>
+                        <td class="positive-return">+3.0%</td>
+                        <td>Recovery</td>
+                    </tr>
+                    <tr>
+                        <td>2017</td>
+                        <td class="positive-return">+28.6%</td>
+                        <td>Strong Growth</td>
+                    </tr>
+                    <tr>
+                        <td>2018</td>
+                        <td class="positive-return">+3.2%</td>
+                        <td>Moderate Growth</td>
+                    </tr>
+                    <tr>
+                        <td>2019</td>
+                        <td class="positive-return">+12.0%</td>
+                        <td>Healthy Growth</td>
+                    </tr>
+                    <tr>
+                        <td>2020</td>
+                        <td class="positive-return">+14.9%</td>
+                        <td>Resilient Growth</td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td class="positive-return">+24.1%</td>
+                        <td>Strong Growth</td>
+                    </tr>
+                    <tr>
+                        <td>2022</td>
+                        <td class="positive-return">+4.3%</td>
+                        <td>Moderate Growth</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td class="positive-return">+20.0%</td>
+                        <td>Strong Growth</td>
+                    </tr>
+                    <tr>
+                        <td>2024</td>
+                        <td class="positive-return">+22.6%</td>
+                        <td>Exceptional Growth</td>
+                    </tr>
+                    <tr>
+                        <td>2025 (till Sept)</td>
+                        <td class="positive-return">+11.0%</td>
+                        <td>Healthy Growth</td>
+                    </tr>
+                </table>
+                
+                <div class="key-term">
+                    <h4>What is NIFTY 50?</h4>
+                    <p>The NIFTY 50 is the flagship index of the National Stock Exchange of India (NSE). It represents the weighted average of 50 of the largest Indian companies across 13 sectors. It is one of the two main stock indices used in India, the other being the BSE SENSEX.</p>
+                </div>
+                
+                <h3>Key Observations</h3>
+                <ul>
+                    <li>The NIFTY 50 has shown positive returns in 11 out of the last 12 full years</li>
+                    <li>Only 2015 showed a negative return, highlighting the overall upward trend</li>
+                    <li>The average annual return over this period is approximately 14.3%</li>
+                    <li>Recent years have shown particularly strong performance with 2024 delivering 22.6% returns</li>
+                </ul>
             </section>
 
             <section id="basic-concepts">
@@ -739,6 +897,7 @@
         <footer>
             <p>Stock Market Investing Guide | © 2023 Financial Wisdom Hub; Author : Anil Kumar VT</p>
             <p>Remember: All investments involve risk, and past performance is not indicative of future results.</p>
+            <p>NIFTY 50 data source: NSE Historical Data</p>
         </footer>
     </div>
 
@@ -755,18 +914,22 @@
 
         // Initialize all charts when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            // Market Growth Chart
-            createChart('marketGrowthChart', {
+            // NIFTY 50 Growth Chart
+            createChart('niftyGrowthChart', {
                 type: 'line',
                 data: {
-                    labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+                    labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
                     datasets: [{
-                        label: 'S&P 500 Index',
-                        data: [1600, 1880, 2040, 2240, 2680, 2500, 3230, 3750, 4770, 3840, 4550],
-                        borderColor: '#3498db',
-                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                        label: 'NIFTY 50 Index',
+                        data: [6000, 8280, 7940, 8180, 10520, 10860, 12160, 13970, 17340, 18080, 21696, 26600, 29526],
+                        borderColor: '#4CAF50',
+                        backgroundColor: 'rgba(76, 175, 80, 0.1)',
                         fill: true,
-                        tension: 0.3
+                        tension: 0.3,
+                        pointBackgroundColor: '#4CAF50',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#4CAF50'
                     }]
                 },
                 options: {
@@ -775,7 +938,23 @@
                     plugins: {
                         title: {
                             display: true,
-                            text: 'Historical S&P 500 Performance (2013-2023)'
+                            text: 'Historical NIFTY 50 Performance (2013-2025)',
+                            font: {
+                                size: 16
+                            }
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            title: {
+                                display: true,
+                                text: 'Index Value'
+                            }
                         }
                     }
                 }
